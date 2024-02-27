@@ -1,0 +1,56 @@
+.container-fluid {
+    padding: 10px;
+    background: linear-gradient(317deg, #666666, #262626, #0D0D0D);
+}
+
+#titulo {
+    padding-top: 20px;
+    color: #FFC000;
+    text-align: center;
+}
+
+#divConteudo {
+    padding: 40px 0px 30px 20px;
+}
+
+#divImagem {  
+    text-align: center;    
+}
+
+#divCartao{
+    padding-right: 120px;
+}
+
+@media(max-width: 768px) {
+    #divCartao{
+        margin-top: 30px;
+        padding-right: 30px;
+    }
+}
+
+#divTexto {
+    line-height: 32px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: white;
+    padding: 40px;
+    border-radius: 30px;
+    background-color: #4473c44d;    
+}
+
+#divTexto:hover {
+    border: solid 2px white;
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);
+}
+
+.btn-success {
+    margin-top: 40px;
+    margin-bottom: 50px;    
+    background-color: rgb(35, 212, 35) !important;
+}
+
+.btn-success:hover {
+    background-color: rgb(12, 163, 12) !important;
+    border: solid 2px white;
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+}
