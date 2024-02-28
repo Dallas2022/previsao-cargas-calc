@@ -1,0 +1,54 @@
+/* .container-fluid {
+    padding: 10px;
+    background: linear-gradient(317deg, #666666, #262626, #0D0D0D);
+} */
+
+.divResultados {
+    color: rgb(255, 255, 255);
+    border: inset 2px white;    
+}
+
+.divRiscoInferior {
+    border-bottom: solid 1px white;
+    margin-bottom: 20px;
+}
+
+.divRiscoSuperior {
+    border-top: solid 1px white;
+}
+
+.resultados {
+    width: 96%;
+    font-weight: 800;
+    text-align: center;    
+    color: rgb(240, 233, 233);
+    padding: 6px;
+    border-radius: 10px;
+    border-color: #4473c44d;
+    background-color: #4473c44d;    
+    margin: 4px;
+}
+
+.lblResultados {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+    padding: 10px 20px 10px 20px;
+}
+
+.gerarPDF {
+    padding: 10px 50px 10px 50px;    
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    margin-top: 30px;
+    background-color: rgb(35, 212, 35);
+    border: outset 1px white;    
+    border-radius: 10px;
+}
+
+.gerarPDF:hover {
+    background-color: rgb(12, 163, 12);
+    border: solid 2px white;
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+}

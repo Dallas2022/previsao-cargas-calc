@@ -1,5 +1,42 @@
+@keyframes float {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    12% {
+        transform: translate3d(1px, 1px, 1px);
+    }
+
+    25% {
+        transform: translate3d(2px, 2px, 2px);        
+    }
+
+    37% {
+        transform: translate3d(3px, 3px, 3px);        
+    }
+
+    50% {
+        transform: translate3d(4px, 4px, 4px);
+    }
+
+    62% {
+        transform: translate3d(3px, 3px, 3px);
+    }
+
+    75% {
+        transform: translate3d(2px, 2px, 2px);
+    }
+
+    87% {
+        transform: translate3d(1px, 1px, 1px);
+    }
+
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
 .container-fluid {
-    padding: 10px;
     background: linear-gradient(317deg, #666666, #262626, #0D0D0D);
 }
 
@@ -13,16 +50,16 @@
     padding: 40px 0px 30px 20px;
 }
 
-#divImagem {  
-    text-align: center;    
+#divImagem {
+    text-align: center;
 }
 
-#divCartao{
+#divCartao {
     padding-right: 120px;
 }
 
 @media(max-width: 768px) {
-    #divCartao{
+    #divCartao {
         margin-top: 30px;
         padding-right: 30px;
     }
@@ -35,7 +72,7 @@
     color: white;
     padding: 40px;
     border-radius: 30px;
-    background-color: #4473c44d;    
+    background-color: #4473c44d;
 }
 
 #divTexto:hover {
@@ -45,12 +82,14 @@
 
 .btn-success {
     margin-top: 40px;
-    margin-bottom: 50px;    
+    margin-bottom: 50px;
     background-color: rgb(35, 212, 35) !important;
+    transform: translate3d(0px, 0px, 0px);
+    animation: float 6s ease-in-out infinite;
 }
 
 .btn-success:hover {
     background-color: rgb(12, 163, 12) !important;
     border: solid 2px white;
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);
 }
