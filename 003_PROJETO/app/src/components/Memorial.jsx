@@ -36,13 +36,12 @@ function Memorial() {
                     {/* Botão para Adicionar um Novo Local */}
                     <label className="lblAdicionarLocal">Adicionar Local</label>
                     <button type="button" onClick={() => { adicionarLocal() }} className="adicionalLocal">+</button>
-
-
-                    {/* Tabela de Resultados */}
-                    <Resultados />
-
                 </div>
             </div>
+
+            {/* Tabela de Resultados */}
+            <Resultados />
+
         </div>
     )
 }

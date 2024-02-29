@@ -1,0 +1,96 @@
+.container-fluid {   
+    background: linear-gradient(317deg, #666666, #262626, #0D0D0D);    
+}
+
+.divQuadroLocal {
+    color: rgb(255, 255, 255);
+    border: inset 2px white;
+    margin-bottom: 50px;
+}
+
+.divLinhaCima {
+    border-top: solid 1px white;
+}
+
+.divLinhaBaixo {
+    border-bottom: solid 1px white;
+}
+
+.dadosLocal {
+    width: 100%;
+    font-weight: 700;
+    text-align: center;    
+    color: rgb(240, 233, 233);
+    padding: 8px;
+    border-radius: 30px;
+    border-color: #4473c44d;
+    background-color: #4473c44d;
+    margin-top: 12px;
+}
+
+.dadoSaidaTUG {
+    width: 100%;
+    font-weight: 700;
+    text-align: center;    
+    color: rgb(240, 233, 233);
+    padding: 8px;
+    border-radius: 10px;
+    border-color: #f55516;
+    background-color: #f55516;    
+}
+
+.lblDadoEntrada {
+    color: white;
+    padding: 20px 20px 10px 10px;
+}
+
+.lblRemoverLocal {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: white;
+    padding: 10px 20px 10px 10px;
+}
+
+.removerLocal {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 50px;    
+    background-color: rgb(241, 10, 10);
+    border: outset 1px white;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.removerLocal:hover {
+    background-color: rgb(202, 13, 13);
+    border: solid 2px white;
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+}
+
+.adicionaIluminacao {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(35, 212, 35);
+    border: outset 1px white;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.adicionaIluminacao:hover {
+    background-color: rgb(12, 163, 12);
+    border: solid 2px white;
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+}
+
+.lblEntradas {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
