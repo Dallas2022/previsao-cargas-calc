@@ -1,6 +1,9 @@
 import React from "react";
 
 import '../estilos/Local.css'
+import Iluminacao from "./Iluminacao";
+import Tug from './Tug'
+import Tue from './Tue'
 
 function Local() {
     return (
@@ -38,8 +41,6 @@ function Local() {
                 </div>
 
 
-
-
                 {/* Linha da Iluminação */}
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-12 col-sm-6">
@@ -48,44 +49,29 @@ function Local() {
                     </div>
                 </div>
 
-                {/* FAZER TUDO QUE FOR REPETIDO VIRAR COMPONENTE */}
+                {/* Linha Inical dos Valores de Iluminação - Esta linha não usa o botão de exclusão */}
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
-                    <div className="col-lg-4 col-sm-12">
+                    <div className="col-lg-3 col-sm-12">
                         <h5>
                             <input type="text" className="dadosLocal" placeholder="Nº de Pontos" />
                         </h5>
                     </div>
-                    <div className="col-lg-4 col-sm-12">
+                    <div className="col-lg-3 col-sm-12">
                         <h5>
                             <input type="text" className="dadosLocal" placeholder="Pot. Unit. (W)" />
                         </h5>
                     </div>
-                    <div className="col-lg-4 col-sm-12">
+                    <div className="col-lg-3 col-sm-12">
                         <h5>
                             <input type="text" className="dadosLocal" placeholder="Nº de Arandelas (60W)" />
                         </h5>
                     </div>
                 </div>
 
-                {/* ESTA REPETE COM A DE CIMA */}
-                <div className="row align-items-center divLinhaCima pt-1 pb-2">
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Nº de Pontos" />
-                        </h5>
-                    </div>
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Pot. Unit. (W)" />
-                        </h5>
-                    </div>
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Nº de Arandelas (60W)" />
-                        </h5>
-                    </div>
-                </div>
-
+                {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
+                <Iluminacao></Iluminacao>
+                <Iluminacao></Iluminacao>
+                <Iluminacao></Iluminacao>
 
 
                 {/* Linha das TUG's - Tomadas de Uso Geral */}
@@ -99,7 +85,7 @@ function Local() {
                     </div>
                 </div>
 
-                {/* FAZER TUDO QUE FOR REPETIDO VIRAR COMPONENTE */}
+                {/* Linha Inical dos Valores de TUG - Esta linha não usa o botão de exclusão */}
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-4 col-sm-12">
                         <h5>
@@ -113,34 +99,11 @@ function Local() {
                     </div>
                 </div>
 
-                {/* ESTA REPETE COM A DE CIMA */}
-                <div className="row align-items-center divLinhaCima pt-1 pb-2">
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Nº de Pontos" />
-                        </h5>
-                    </div>
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Pot. Unit. (W)" />
-                        </h5>
-                    </div>
-                </div>
-
-                {/* ESTA REPETE COM A DE CIMA */}
-                <div className="row align-items-center divLinhaCima pt-1 pb-2">
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Nº de Pontos" />
-                        </h5>
-                    </div>
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Pot. Unit. (W)" />
-                        </h5>
-                    </div>
-                </div>
-
+                {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
+                <Tug></Tug>
+                <Tug></Tug>
+                <Tug></Tug>
+                <Tug></Tug>
 
 
                 {/* Linha das TUE's - Tomadas de Uso Específico */}
@@ -151,7 +114,7 @@ function Local() {
                     </div>
                 </div>
 
-                {/* FAZER TUDO QUE FOR REPETIDO VIRAR COMPONENTE */}
+                {/* Linha Inical dos Valores de TUG - Esta linha não usa o botão de exclusão */}
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-4 col-sm-12">
                         <h5>
@@ -165,20 +128,8 @@ function Local() {
                     </div>
                 </div>
 
-                {/* ESTA REPETE COM A DE CIMA */}
-                <div className="row align-items-center divLinhaCima pt-1 pb-2">
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Aparelho" />
-                        </h5>
-                    </div>
-                    <div className="col-lg-4 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Pot. Unit. (W)" />
-                        </h5>
-                    </div>
-                </div>
-                
+                {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
+                <Tue></Tue>
 
             </div>
         </>

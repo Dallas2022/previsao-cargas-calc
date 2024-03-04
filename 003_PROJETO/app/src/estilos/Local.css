@@ -94,3 +94,19 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.removerLinha {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(241, 10, 10);
+    border: outset 1px white;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.removerLinha:hover {
+    background-color: rgb(202, 13, 13);
+    border: solid 2px white;
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+}
