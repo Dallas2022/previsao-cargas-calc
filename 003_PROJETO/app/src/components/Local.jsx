@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import '../estilos/Local.css'
 import Iluminacao from "./Iluminacao";
@@ -6,6 +6,33 @@ import Tug from './Tug'
 import Tue from './Tue'
 
 function Local() {
+
+    const [mtzIlum, setMtzIlum] = useState(() => {
+        return []
+    })
+
+    const [mtzTug, setMtzTug] = useState(() => {
+        return []
+    })
+
+    const [mtzTue, setMtzTue] = useState(() => {
+        return []
+    })
+
+  
+    function inserirLinhaIlum() {
+        setMtzIlum(mtzIlum => [...mtzIlum, <Iluminacao></Iluminacao>])
+    }
+
+    function inserirLinhaTug() {
+        setMtzTug(mtzTug => [...mtzTug, <Tug></Tug>])
+    }
+
+    function inserirLinhaTue() {
+        setMtzTue(mtzTue => [...mtzTue, <Tue></Tue>])
+    }
+
+    
     return (
         <>
             <div className="container divQuadroLocal">
@@ -45,7 +72,7 @@ function Local() {
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-12 col-sm-6">
                         <label className="lblEntradas">Iluminação :</label>
-                        <button type="button" className="adicionaIluminacao">+</button>
+                        <button type="button" onClick={() => {inserirLinhaIlum()}} className="adicionaIluminacao">+</button>
                     </div>
                 </div>
 
@@ -69,16 +96,14 @@ function Local() {
                 </div>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                <Iluminacao></Iluminacao>
-                <Iluminacao></Iluminacao>
-                <Iluminacao></Iluminacao>
+                {mtzIlum}
 
 
                 {/* Linha das TUG's - Tomadas de Uso Geral */}
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-6 col-sm-6">
                         <label className="lblEntradas">T.U.G :</label>
-                        <button type="button" className="adicionaIluminacao">+</button>
+                        <button type="button" onClick={() => {inserirLinhaTug()}} className="adicionaTug">+</button>
                     </div>
                     <div className="col-lg-6 col-sm-6">
                         <input type="text" className="dadoSaidaTUG" readOnly value="Número Mínimo de Pontos : Val_Saída" />
@@ -100,17 +125,14 @@ function Local() {
                 </div>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                <Tug></Tug>
-                <Tug></Tug>
-                <Tug></Tug>
-                <Tug></Tug>
+                {mtzTug}
 
 
                 {/* Linha das TUE's - Tomadas de Uso Específico */}
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-6 col-sm-6">
                         <label className="lblEntradas">T.U.E :</label>
-                        <button type="button" className="adicionaIluminacao">+</button>
+                        <button type="button" onClick={() => { inserirLinhaTue() }} className="adicionaIluminacao">+</button>
                     </div>
                 </div>
 
@@ -129,7 +151,7 @@ function Local() {
                 </div>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                <Tue></Tue>
+                {mtzTue}
 
             </div>
         </>

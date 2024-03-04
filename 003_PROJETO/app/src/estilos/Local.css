@@ -69,7 +69,7 @@
     box-shadow: 2px 2px 8px rgb(207, 206, 206);    
 }
 
-.adicionaIluminacao {
+.adicionaIluminacao, .adicionaTug {
     font-size: 1.5em;
     font-weight: 700;
     color: white;
@@ -81,7 +81,7 @@
     border-radius: 10px;
 }
 
-.adicionaIluminacao:hover {
+.adicionaIluminacao:hover, .adicionaTug:hover {
     background-color: rgb(12, 163, 12);
     border: solid 2px white;
     box-shadow: 2px 2px 8px rgb(207, 206, 206);    
