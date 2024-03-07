@@ -1,11 +1,12 @@
-import React, {useState} from "react";
-
-import '../estilos/Local.css'
+import React, { useState } from "react";
+import { v4 as uuid } from 'uuid';
 import Iluminacao from "./Iluminacao";
 import Tug from './Tug'
 import Tue from './Tue'
 
-function Local() {
+import '../estilos/Local.css'
+
+function Local(props) {
 
     const [mtzIlum, setMtzIlum] = useState(() => {
         return []
@@ -19,20 +20,37 @@ function Local() {
         return []
     })
 
-  
+
     function inserirLinhaIlum() {
-        setMtzIlum(mtzIlum => [...mtzIlum, <Iluminacao></Iluminacao>])
+        setMtzIlum(mtzIlum => [...mtzIlum, uuid()])
     }
+
+    function removerLinhaIlum(id) {
+        let mtzTemp = mtzIlum.filter(el => el !== id)
+        setMtzIlum(mtzTemp)
+    }
+
 
     function inserirLinhaTug() {
-        setMtzTug(mtzTug => [...mtzTug, <Tug></Tug>])
+        setMtzTug(mtzTug => [...mtzTug, uuid()])
     }
+
+    function removerLinhaTug(id) {
+        let mtzTemp = mtzTug.filter(el => el !== id)
+        setMtzTug(mtzTemp)
+    }
+
 
     function inserirLinhaTue() {
-        setMtzTue(mtzTue => [...mtzTue, <Tue></Tue>])
+        setMtzTue(mtzTue => [...mtzTue, uuid()])
     }
 
-    
+    function removerLinhaTue(id) {
+        let mtzTemp = mtzTue.filter(el => el !== id)
+        setMtzTue(mtzTemp)
+    }
+
+
     return (
         <>
             <div className="container divQuadroLocal">
@@ -46,7 +64,7 @@ function Local() {
                     </div>
                     <div className="col-lg-3 col-sm-12">
                         <label className="lblRemoverLocal">Remover Local</label>
-                        <button type="button" className="removerLocal">-</button>
+                        <button type="button" onClick={() => { props.fnc_remover(props.id) }} className="removerLocal">-</button>
                     </div>
                 </div>
 
@@ -72,7 +90,7 @@ function Local() {
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-12 col-sm-6">
                         <label className="lblEntradas">Iluminação :</label>
-                        <button type="button" onClick={() => {inserirLinhaIlum()}} className="adicionaIluminacao">+</button>
+                        <button type="button" onClick={() => { inserirLinhaIlum() }} className="adicionaIluminacao">+</button>
                     </div>
                 </div>
 
@@ -96,14 +114,14 @@ function Local() {
                 </div>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzIlum}
+                {mtzIlum.map(el => { return <Iluminacao key={el} id={el} fnc_remover={removerLinhaIlum} /> })}
 
 
-                {/* Linha das TUG's - Tomadas de Uso Geral */}
+               {/* Linha das TUG's - Tomadas de Uso Geral */}
                 <div className="row align-items-center divLinhaCima pt-1 pb-2">
                     <div className="col-lg-6 col-sm-6">
                         <label className="lblEntradas">T.U.G :</label>
-                        <button type="button" onClick={() => {inserirLinhaTug()}} className="adicionaTug">+</button>
+                        <button type="button" onClick={() => { inserirLinhaTug() }} className="adicionaTug">+</button>
                     </div>
                     <div className="col-lg-6 col-sm-6">
                         <input type="text" className="dadoSaidaTUG" readOnly value="Número Mínimo de Pontos : Val_Saída" />
@@ -125,7 +143,7 @@ function Local() {
                 </div>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzTug}
+                {mtzTug.map(el => {return <Tug key={el} id={el} fnc_remover={removerLinhaTug} ></Tug>})}
 
 
                 {/* Linha das TUE's - Tomadas de Uso Específico */}
@@ -151,7 +169,7 @@ function Local() {
                 </div>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzTue}
+                {mtzTue.map(el => {return <Tue key={el} id={el} fnc_remover={removerLinhaTue}></Tue>})}
 
             </div>
         </>

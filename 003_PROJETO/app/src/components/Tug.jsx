@@ -1,9 +1,9 @@
 import React from "react";
 
-function Tug() {
+function Tug(props) {
     return (
         <>
-            <div className="row align-items-center divLinhaCima pt-1 pb-2">
+            <div id={props.id} className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-4 col-sm-12">
                     <h5>
                         <input type="text" className="dadosLocal" placeholder="Nº de Pontos" />
@@ -15,7 +15,7 @@ function Tug() {
                     </h5>
                 </div>
                 <div className="col-lg-4 col-sm-12">
-                    <button type="button" className="removerLinha">-</button>
+                    <button type="button" onClick={() => {props.fnc_remover(props.id)}} className="removerLinha">-</button>
                 </div>
             </div>
 

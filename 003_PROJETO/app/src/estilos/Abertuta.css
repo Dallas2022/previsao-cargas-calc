@@ -36,7 +36,7 @@
     }
 }
 
-.container-fluid {
+body {    
     background: linear-gradient(317deg, #666666, #262626, #0D0D0D);
 }
 

@@ -1,25 +1,31 @@
-import React, { createElement } from "react";
+import React, {useState} from "react";
+import {v4 as uuidLocal} from 'uuid'
+
 import Local from "./Local";
 import Resultados from "./Resultados";
 
 import '../estilos/Memorial.css'
 
 function Memorial() {
-
-    let mtz = []
+     
+    const [mtz, setMtz] = useState(() => {
+        return []
+    })
 
     function adicionarLocal() {
-
-        mtz.push(<Local />)
-        mtz.push(<Local />)
-        mtz.push(<Local />)
-
-        return mtz
-
+        setMtz(mtz => [...mtz, uuidLocal()])
     }
 
+    function removerLocal(id) {
+        let mtzTemp = mtz.filter(el => el !== id )
+        setMtz(mtzTemp)
+    }
+
+    let tamanhoMargem = "0%"
+    mtz.length > 0 ? tamanhoMargem = "0%" : tamanhoMargem = "25%"
+
     return (
-        <div id="corpo" className="container-fluid">
+        <div className="container-fluid" style={{marginBottom: tamanhoMargem}} >
             {/* Cabeçalho do Memorial de Cálculo */}
             <div className="row p-4">
                 <div className="col-12">
@@ -30,8 +36,9 @@ function Memorial() {
                         <input id="descConsumidor" type="text" placeholder="Informe o consumidor - Ex: TIPO C / Atendido a 4 fios / 3F e 1N / Tensão 127 / 220V"></input>
                     </h4>
 
-
-                    {adicionarLocal()}
+                    {/* Locais Inseridos de Forma Dinâmica*/}
+                    {mtz.map(el => {return <Local key={el} id={el} fnc_remover={removerLocal}></Local>})}
+                    
 
                     {/* Botão para Adicionar um Novo Local */}
                     <label className="lblAdicionarLocal">Adicionar Local</label>
@@ -40,7 +47,8 @@ function Memorial() {
             </div>
 
             {/* Tabela de Resultados */}
-            <Resultados />
+            
+            { mtz.length > 0 ? <Resultados /> : null }             
 
         </div>
     )

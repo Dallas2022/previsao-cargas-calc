@@ -1,6 +1,6 @@
 import React from "react";
 
-function Tue() {
+function Tue(props) {
     return (
         <>
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
@@ -15,7 +15,7 @@ function Tue() {
                     </h5>
                 </div>
                 <div className="col-lg-3 col-sm-12">
-                    <button type="button" className="removerLinha">-</button>
+                    <button type="button" onClick={() => { props.fnc_remover(props.id) }} className="removerLinha">-</button>
                 </div>
             </div>
         </>
