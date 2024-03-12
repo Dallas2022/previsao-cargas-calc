@@ -25,7 +25,7 @@ function Abertura() {
                             <p>Se você deseja realizar um cálculo de previsão de cargas de forma fácil e rápida, você está no lugar certo. Clique no botão abaixo para iniciar</p>
                         </div>
 
-                        {/* Botão */}
+                        {/* Botão de Início */}
                         <Link to="/locais"  className="btn btn-success w-100"><h4>INICIAR</h4></Link>
                     </div>                    
                 </div>
