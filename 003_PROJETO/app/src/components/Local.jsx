@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import IluminacaoLinhaHeader from "./IluminacaoLinhaHeader";
 import TugLinhaHeader from "./TugLinhaHeader";
 import TueLinhaHeader from "./TueLinhaHeader";
+import LocalHeader from "./LocalHeader";
 import Dimensoes from './Dimensoes'
 import Iluminacao from "./Iluminacao";
 import Tug from './Tug'
@@ -60,18 +61,8 @@ function Local(props) {
         <>
             <div className="container divQuadroLocal">
 
-                {/* Linha do Nome do Local */}
-                <div className="row align-items-center">
-                    <div className="col-lg-9 col-sm-12">
-                        <h5>
-                            <input type="text" className="dadosLocal" placeholder="Nome do Local ou Dependência – Ex: Sala de Espera" />
-                        </h5>
-                    </div>
-                    <div className="col-lg-3 col-sm-12">
-                        <label className="lblRemoverLocal">Remover Local</label>
-                        <button type="button" onClick={() => { props.fnc_remover(props.id) }} className="removerLocal">-</button>
-                    </div>
-                </div>
+                {/* Linha do Nome do Local com Botão de Remover */}
+                <LocalHeader {...props}></LocalHeader>
 
                 {/* Linha das Dimensões */}
                 <Dimensoes></Dimensoes>

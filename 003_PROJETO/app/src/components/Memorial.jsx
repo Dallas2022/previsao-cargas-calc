@@ -46,8 +46,7 @@ function Memorial() {
                 </div>
             </div>
 
-            {/* Tabela de Resultados */}
-            
+            {/* Tabela de Resultados - Mostra se Existir Pelo Menos uma Tabela */}            
             { mtz.length > 0 ? <Resultados /> : null }             
 
         </div>
