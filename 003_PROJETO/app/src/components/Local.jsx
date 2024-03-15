@@ -66,7 +66,7 @@ function Local(props) {
                 <LocalHeader {...props}></LocalHeader>
 
                 {/* Linha das Dimensões */}
-                <Dimensoes></Dimensoes>
+                <Dimensoes idLocal={props.id}></Dimensoes>
 
                 {/* Linhas da Iluminação
 
@@ -81,20 +81,20 @@ function Local(props) {
                 {/* Linha das TUG's - Tomadas de Uso Geral
 
                 Linha Inical dos Valores de TUG - Esta linha não usa o botão de exclusão */}
-                <TugLinhaHeader fnc_inserir={inserirLinhaTug}></TugLinhaHeader>
+                <TugLinhaHeader idLocal={props.id} fnc_inserir={inserirLinhaTug}></TugLinhaHeader>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzTug.map(el => { return <Tug key={el} id={el} fnc_remover={removerLinhaTug} ></Tug> })}
+                {mtzTug.map(el => { return <Tug key={el} id={el} fnc_remover={removerLinhaTug} fnc_inserir={inserirLinhaTug}></Tug> })}
 
 
 
                 {/* Linha das TUE's - Tomadas de Uso Específico
 
                 Linha Inical dos Valores de TUG - Esta linha não usa o botão de exclusão */}
-                <TueLinhaHeader fnc_inserir={inserirLinhaTue}></TueLinhaHeader>
+                <TueLinhaHeader idLocal={props.id} fnc_inserir={inserirLinhaTue}></TueLinhaHeader>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzTue.map(el => { return <Tue key={el} id={el} fnc_remover={removerLinhaTue}></Tue> })}
+                {mtzTue.map(el => { return <Tue key={el} id={el} fnc_remover={removerLinhaTue} fnc_inserir={inserirLinhaTue}></Tue> })}
 
             </div>
         </>
