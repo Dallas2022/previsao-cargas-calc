@@ -6,6 +6,7 @@ import Resultados from "./Resultados";
 
 import '../estilos/Memorial.css'
 
+
 function Memorial() {
      
     const [mtz, setMtz] = useState(() => {

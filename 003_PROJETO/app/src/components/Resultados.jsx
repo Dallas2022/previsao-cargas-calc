@@ -1,8 +1,13 @@
 import React from "react";
+import { useContext } from "react";
+import Contexto from "../providers/Contexto";
 
 import '../estilos/Resultados.css'
 
 function Resultados() {
+
+    const publico = useContext(Contexto)
+
     return (
         <>
             <div className="container divQuadro">
@@ -30,7 +35,7 @@ function Resultados() {
                         <label className="lblResultados">Potência Total do Sistema de Iluminação :</label>
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                        <input className="resultados" type="text" readOnly value="Valor em Watts"></input>
+                        <input className="resultados" type="text" readOnly value={publico.somatoriaIlumPotTotW + " Watts"}></input>                        
                     </div>
                 </div>
 

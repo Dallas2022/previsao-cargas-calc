@@ -59,6 +59,7 @@ function Local(props) {
 
     return (
         <>
+        {/* <h3 style={{color: "white"}} >ID LOCAL: {props.id}</h3> */}
             <div className="container divQuadroLocal">
 
                 {/* Linha do Nome do Local com Botão de Remover */}
@@ -70,10 +71,10 @@ function Local(props) {
                 {/* Linhas da Iluminação
 
                 Linha Inical dos Valores de Iluminação - Esta linha não usa o botão de exclusão */}
-                <IluminacaoLinhaHeader fnc_inserir={inserirLinhaIlum}></IluminacaoLinhaHeader>
+                <IluminacaoLinhaHeader idLocal={props.id} fnc_inserir={inserirLinhaIlum}></IluminacaoLinhaHeader>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzIlum.map(el => { return <Iluminacao key={el} id={el} fnc_remover={removerLinhaIlum} /> })}
+                {mtzIlum.map(el => { return <Iluminacao key={el} id={el} fnc_remover={removerLinhaIlum} fnc_inserir={inserirLinhaIlum} /> })}
 
 
 
