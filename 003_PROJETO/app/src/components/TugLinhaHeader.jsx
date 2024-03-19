@@ -5,24 +5,24 @@ import Contexto from "../providers/Contexto";
 function TugLinhaHeader(props) {
 
     // Valores Dinâmicos para Interação com a Coleção de Dados.
-    const [Aparelho, setAparelho] = useState(() => {
-        return ""
+    const [NumPontos, setNumPontos] = useState(() => {
+        return 0
     })
 
     const [PotUnitW, setPotUnitW] = useState(() => {
         return 0
     })
 
+
+    // Valores Dinâmicos para Interação Com o Campo de Dimensões (Perímetro).
     const [PontosPerimetro, setPontosPerimetro] = useState(() => {
         return 0
     })
-
-
     
 
     // Coleção de Dados Para Serem Enviados para Calcular no "Público".
     // Ordem dos Dados - Id, Aparelho e Pot. Unit. (W).
-    const valores = [props.idLocal, Aparelho, PotUnitW]
+    const valores = [props.idLocal, NumPontos, PotUnitW]
 
     //Utilização dos Recursos Contexto Público.
     const publico = useContext(Contexto)
@@ -30,8 +30,8 @@ function TugLinhaHeader(props) {
     // A Coleção é Atualizada Cada Vez que Um Valor For Alterado.
     useEffect(() => {
                 
-        publico.setMtzPotTotTUE(publico.mtzPotTotTUE.filter(el => el[0] !== props.idLocal))       
-        publico.setMtzPotTotTUE(mtz => [...mtz, valores])
+        publico.setMtzPotTotTUG(publico.mtzPotTotTUG.filter(el => el[0] !== props.idLocal))       
+        publico.setMtzPotTotTUG(mtz => [...mtz, valores])
         publico.setControleRender(!publico.controleRender)
 
     }, valores)
@@ -65,7 +65,7 @@ function TugLinhaHeader(props) {
                     <button type="button" onClick={() => { props.fnc_inserir() }} className="adicionaTug">+</button>
                 </div>
                 <div className="col-lg-6 col-sm-6">
-                    <input type="text" className="dadoSaidaTUG" readOnly value={PontosPerimetro <= 1 ? PontosPerimetro + " ponto" : PontosPerimetro + " pontos"} />
+                    <input type="text" className="dadoSaidaTUG" readOnly value={PontosPerimetro == 1 ? PontosPerimetro + " ponto" : PontosPerimetro + " pontos"} />
                 </div>
             </div>
 
@@ -73,12 +73,12 @@ function TugLinhaHeader(props) {
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-4 col-sm-12">
                     <h5>
-                        <input type="text" className="dadosLocal" placeholder="Nº de Pontos" />
+                        <input type="number" className="dadosLocal" onChange={e => setNumPontos(e.target.value)} placeholder="Nº de Pontos" />
                     </h5>
                 </div>
                 <div className="col-lg-4 col-sm-12">
                     <h5>
-                        <input type="text" className="dadosLocal" placeholder="Pot. Unit. (W)" />
+                        <input type="number" className="dadosLocal" onChange={e => setPotUnitW(e.target.value)} placeholder="Pot. Unit. (W)" />
                     </h5>
                 </div>
             </div>

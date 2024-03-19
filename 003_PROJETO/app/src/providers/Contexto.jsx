@@ -11,7 +11,7 @@ export function ContextoProvider({ children }) {
     })
 
 
-    // States Utilizados para o Cálculo da Potência Total do Sistema de Iluminação.
+    // States Utilizados para o Cálculo da Área Total.
     const [mtzAreaTotal, setMtzAreaTotal] = useState(() => {
         return []
     })
@@ -32,6 +32,13 @@ export function ContextoProvider({ children }) {
 
 
     // States Utilizados para o Cálculo da Potência Total das Tomadas de Uso Geral - TUG.
+    const [mtzPotTotTUG, setMtzPotTotTUG] = useState(() => {
+        return []
+    })
+
+    const [somatoriaTUGPotTotW, setSomatoriaTUGPotTotW] = useState(() => {
+        return 0
+    })
 
 
     // States Utilizados para o Cálculo da Potência Total das Tomadas de Uso Específico - TUE.
@@ -42,7 +49,6 @@ export function ContextoProvider({ children }) {
     const [somatoriaTUEPotTotW, setSomatoriaTUEPotTotW] = useState(() => {
         return 0
     })
-
 
 
     useEffect(() => {
@@ -61,14 +67,20 @@ export function ContextoProvider({ children }) {
         let somatoriaIlum = 0
         
         mtzPotTotIlum.forEach(el => {
-            somatoriaIlum = somatoriaIlum + el[1] * el[2] + el[3] * 60
+            somatoriaIlum = somatoriaIlum + Number(el[1] * el[2] + el[3] * 60)
         });
 
         setSomatoriaIlumPotTotW(somatoriaIlum)
 
 
-        // INSERIR NA ORDEM - TUG AQUI !
+        // Lógica de Cálculo da Potência Total das Tomadas de Uso Geral - TUG.
+        let somatoriaTUG = 0
 
+        mtzPotTotTUG.forEach(el => {
+            somatoriaTUG = somatoriaTUG + Number(el[1] * el[2])
+        });
+        
+        setSomatoriaTUGPotTotW(somatoriaTUG)
 
 
         // Lógica de Cálculo da Potência Total das Tomadas de Uso Específico - TUE.
@@ -85,8 +97,6 @@ export function ContextoProvider({ children }) {
     }, [controleRender])
 
 
-
-
 return (
     <>
         <Contexto.Provider value={{
@@ -94,6 +104,8 @@ return (
             somatoriaAreaTotal,
             mtzPotTotIlum, setMtzPotTotIlum,
             somatoriaIlumPotTotW,
+            mtzPotTotTUG, setMtzPotTotTUG,
+            somatoriaTUGPotTotW,
             mtzPotTotTUE, setMtzPotTotTUE,
             somatoriaTUEPotTotW,
             controleRender, setControleRender

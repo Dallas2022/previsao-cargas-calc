@@ -35,7 +35,7 @@ function Resultados() {
                         <label className="lblResultados">Potência Total do Sistema de Iluminação :</label>
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                        <input className="resultados" type="text" readOnly value={publico.somatoriaIlumPotTotW + " W"}></input>                        
+                        <input className="resultados" type="text" readOnly value={publico.somatoriaIlumPotTotW == 1 ? publico.somatoriaIlumPotTotW + " Watt" : publico.somatoriaIlumPotTotW + " Watts"}></input>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@ function Resultados() {
                         <label className="lblResultados">Potência Total das Tomadas de Uso Geral :</label>
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                        <input className="resultados" type="text" readOnly value="Valor em Watts"></input>
+                        <input className="resultados" type="text" readOnly value={publico.somatoriaTUGPotTotW == 1 ? publico.somatoriaTUGPotTotW + " Watt" : publico.somatoriaTUGPotTotW + " Watts"}></input>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ function Resultados() {
                         <label className="lblResultados">Potência Total das Tomadas de Uso Específico :</label>
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                        <input className="resultados" type="text" readOnly value={publico.somatoriaTUEPotTotW + " W"}></input>
+                        <input className="resultados" type="text" readOnly value={publico.somatoriaTUEPotTotW == 1 ? publico.somatoriaTUEPotTotW + " Watt" : publico.somatoriaTUEPotTotW + " Watts"}></input>
                     </div>
                 </div>
 
