@@ -26,7 +26,7 @@ function Resultados() {
                         <label className="lblResultados">Área Total do Dimensionamento :</label>
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                        <input className="resultados" type="text" readOnly value="Valor em m²"></input>
+                        <input className="resultados" type="text" readOnly value={publico.somatoriaAreaTotal + " m²"}></input>
                     </div>
                 </div>
 

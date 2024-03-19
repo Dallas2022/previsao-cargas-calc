@@ -12,6 +12,16 @@ export function ContextoProvider({ children }) {
 
 
     // States Utilizados para o Cálculo da Potência Total do Sistema de Iluminação.
+    const [mtzAreaTotal, setMtzAreaTotal] = useState(() => {
+        return []
+    })
+
+    const [somatoriaAreaTotal, setSomatoriaAreaTotal] = useState(() => {
+        return 0
+    })
+
+
+    // States Utilizados para o Cálculo da Potência Total do Sistema de Iluminação.
     const [mtzPotTotIlum, setMtzPotTotIlum] = useState(() => {
         return []
     })
@@ -36,6 +46,16 @@ export function ContextoProvider({ children }) {
 
 
     useEffect(() => {
+
+        // Lógica de Cálculo da Área Total do Dimensionamento.
+        let somatoriaAreaTotal = 0
+
+        mtzAreaTotal.forEach( el => 
+            somatoriaAreaTotal = somatoriaAreaTotal + Number(el[1])
+        )
+
+        setSomatoriaAreaTotal(somatoriaAreaTotal)
+
 
         // Lógica de Cálculo da Potência Total do Sistema de Iluminação.
         let somatoriaIlum = 0
@@ -70,6 +90,8 @@ export function ContextoProvider({ children }) {
 return (
     <>
         <Contexto.Provider value={{
+            mtzAreaTotal, setMtzAreaTotal,
+            somatoriaAreaTotal,
             mtzPotTotIlum, setMtzPotTotIlum,
             somatoriaIlumPotTotW,
             mtzPotTotTUE, setMtzPotTotTUE,
