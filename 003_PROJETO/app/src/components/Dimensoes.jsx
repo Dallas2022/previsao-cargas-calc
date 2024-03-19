@@ -9,10 +9,14 @@ function Dimensoes(props) {
         return 0
     })
 
+    const [Perimetro, setPerimetro] = useState(() => {
+        return 0
+    })
+
 
     // Coleção de Dados Para Serem Enviados para Calcular no "Público".
     // Ordem dos Dados - Id, AreaTotal.
-    const valores = [props.idLocal, AreaTotal]
+    const valores = [props.idLocal, AreaTotal, Perimetro]
 
     //Utilização dos Recursos Contexto Público.
     const publico = useContext(Contexto)
@@ -41,7 +45,7 @@ function Dimensoes(props) {
                 </div>
                 <div className="col-lg-4 col-sm-12">
                     <h5>
-                        <input type="number" className="dadosLocal" placeholder="Perímetro em m" />
+                        <input type="number" className="dadosLocal" onChange={e => setPerimetro(e.target.value)} placeholder="Perímetro em m" />
                     </h5>
                 </div>
             </div>

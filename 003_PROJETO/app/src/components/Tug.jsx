@@ -16,6 +16,7 @@ function Tug(props) {
                 </div>
                 <div className="col-lg-4 col-sm-12">
                     <button type="button" onClick={() => {props.fnc_remover(props.id)}} className="removerLinha">-</button>
+                    <button type="button" onClick={() => { props.fnc_inserir(props.id) }} className="adicionaIluminacao ms-3">+</button>
                 </div>
             </div>
 

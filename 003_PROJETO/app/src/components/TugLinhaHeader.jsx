@@ -1,6 +1,61 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { useContext } from "react";
+import Contexto from "../providers/Contexto";
 
 function TugLinhaHeader(props) {
+
+    // Valores Dinâmicos para Interação com a Coleção de Dados.
+    const [Aparelho, setAparelho] = useState(() => {
+        return ""
+    })
+
+    const [PotUnitW, setPotUnitW] = useState(() => {
+        return 0
+    })
+
+    const [PontosPerimetro, setPontosPerimetro] = useState(() => {
+        return 0
+    })
+
+
+    
+
+    // Coleção de Dados Para Serem Enviados para Calcular no "Público".
+    // Ordem dos Dados - Id, Aparelho e Pot. Unit. (W).
+    const valores = [props.idLocal, Aparelho, PotUnitW]
+
+    //Utilização dos Recursos Contexto Público.
+    const publico = useContext(Contexto)
+
+    // A Coleção é Atualizada Cada Vez que Um Valor For Alterado.
+    useEffect(() => {
+                
+        publico.setMtzPotTotTUE(publico.mtzPotTotTUE.filter(el => el[0] !== props.idLocal))       
+        publico.setMtzPotTotTUE(mtz => [...mtz, valores])
+        publico.setControleRender(!publico.controleRender)
+
+    }, valores)
+
+    // Verifica a Atualização do Perímertro - Calcula o Número Mínimo de Pontos.
+    useEffect(() => {
+
+        let perimetro = publico.mtzAreaTotal.filter(el => el[0] === props.idLocal)
+        
+        if(perimetro.length > 0) {
+
+            // Cálculo do Número de Pontos de TUG Baseado no Perímetro.
+            if(perimetro[0][2] <= 6) {
+                setPontosPerimetro(1)
+            } else {
+                let valor = perimetro[0][2] / 5
+                setPontosPerimetro(Math.ceil(valor))
+            }
+
+        }
+
+    }, [publico.controleRender])
+    
+    
     return (
         <>
             {/* Linha das TUG's - Tomadas de Uso Geral */}
@@ -10,7 +65,7 @@ function TugLinhaHeader(props) {
                     <button type="button" onClick={() => { props.fnc_inserir() }} className="adicionaTug">+</button>
                 </div>
                 <div className="col-lg-6 col-sm-6">
-                    <input type="text" className="dadoSaidaTUG" readOnly value="Número Mínimo de Pontos : Val_Saída" />
+                    <input type="text" className="dadoSaidaTUG" readOnly value={PontosPerimetro <= 1 ? PontosPerimetro + " ponto" : PontosPerimetro + " pontos"} />
                 </div>
             </div>
 
