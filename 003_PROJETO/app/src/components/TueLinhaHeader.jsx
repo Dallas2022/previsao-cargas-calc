@@ -42,7 +42,7 @@ function TueLinhaHeader(props) {
             </div>
 
 
-            <h2>ID Header : {props.idLocal}</h2>
+            {/* <h2>ID Header : {props.idLocal}</h2> */}
 
             {/* Linha Inical dos Valores de TUG - Esta linha não usa o botão de exclusão */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">

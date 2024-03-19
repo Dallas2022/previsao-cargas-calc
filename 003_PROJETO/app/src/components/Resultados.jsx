@@ -63,7 +63,7 @@ function Resultados() {
                         <label className="lblResultados">Potência Total (Somatória das Potências) :</label>
                     </div>
                     <div className="col-lg-6 col-sm-12">
-                        <input className="resultados" type="text" readOnly value="Valor em Watts"></input>
+                        <input className="resultados" type="text" readOnly value={publico.somatoriaPotTotGeralW == 1 ? publico.somatoriaPotTotGeralW + " Watt" : publico.somatoriaPotTotGeralW + " Watts"}></input>
                     </div>
                 </div>
             </div>

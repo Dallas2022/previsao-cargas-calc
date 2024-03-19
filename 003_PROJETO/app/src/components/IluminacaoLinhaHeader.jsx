@@ -57,7 +57,7 @@ function IluminacaoLinhaHeader(props) {
                     </div>
                 )
             })} */}
-            <h2>ID Header : {props.idLocal}</h2>
+            {/* <h2>ID Header : {props.idLocal}</h2> */}
 
 
 

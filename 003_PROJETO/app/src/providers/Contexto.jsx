@@ -51,6 +51,12 @@ export function ContextoProvider({ children }) {
     })
 
 
+    // States Utilizados para o Cálculo da Potência Total Geral - Somatória das Potências.
+    const [somatoriaPotTotGeralW, setSomatoriaPotTotGeralW] = useState(() => {
+        return 0
+    })
+
+
     useEffect(() => {
 
         // Lógica de Cálculo da Área Total do Dimensionamento.
@@ -93,6 +99,8 @@ export function ContextoProvider({ children }) {
         setSomatoriaTUEPotTotW(somatoriaTUE)
 
 
+        // Lógica de Cálculo da Potência Total Geral - Somatória das Potências.
+        setSomatoriaPotTotGeralW(somatoriaIlum + somatoriaTUG + somatoriaTUE)
 
     }, [controleRender])
 
@@ -108,6 +116,7 @@ return (
             somatoriaTUGPotTotW,
             mtzPotTotTUE, setMtzPotTotTUE,
             somatoriaTUEPotTotW,
+            somatoriaPotTotGeralW,
             controleRender, setControleRender
         }}>
             {children}

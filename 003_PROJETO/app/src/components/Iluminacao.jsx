@@ -55,8 +55,8 @@ function Iluminacao(props) {
                 </div>
             })} */}
                         <hr></hr>
-            <h2>ID : {props.id}</h2>
-            <hr></hr>
+            {/* <h2>ID : {props.id}</h2>
+            <hr></hr> */}
             {/* <h5>MATRIZ GLOBAL : {publico.mtzPotTotIlum}</h5>
             <h5>TAMANHO MATRIZ GLOBAL = {publico.mtzPotTotIlum.length}</h5>
             <h5>TEMP = {teste}</h5>
