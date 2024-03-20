@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import {v4 as uuidLocal} from 'uuid'
+import { useContext } from "react";
+import Contexto from "../providers/Contexto";
 
 import Local from "./Local";
 import Resultados from "./Resultados";
@@ -8,7 +10,10 @@ import '../estilos/Memorial.css'
 
 
 function Memorial() {
-     
+
+    //Utilização dos Recursos Contexto Público.
+    const publico = useContext(Contexto)
+    
     const [mtz, setMtz] = useState(() => {
         return []
     })
@@ -18,6 +23,15 @@ function Memorial() {
     }
 
     function removerLocal(id) {
+        
+        // Lógica Para Subtrair os Dados de Um Local Excluído da Tabela de Resultados.        
+        publico.setMtzAreaTotal(publico.mtzAreaTotal.filter(el => el[0] !== id))
+        publico.setMtzPotTotIlum(publico.mtzPotTotIlum.filter(el => el[0] !== id))
+        publico.setMtzPotTotTUG(publico.mtzPotTotTUG.filter(el => el[0] !== id))
+        publico.setMtzPotTotTUE(publico.mtzPotTotTUE.filter(el => el[0] !== id))
+        publico.setControleRender(!publico.controleRender)
+        
+        // Lógica Para Remover o Bloco da Interface Gráfica do Local.
         let mtzTemp = mtz.filter(el => el !== id )
         setMtz(mtzTemp)
     }
@@ -26,11 +40,12 @@ function Memorial() {
     mtz.length > 0 ? tamanhoMargem = "0%" : tamanhoMargem = "25%"
 
     return (
-        <div className="container-fluid" style={{marginBottom: tamanhoMargem}} >
+        <div className="container-fluid" style={{marginBottom: tamanhoMargem}} >            
+
             {/* Cabeçalho do Memorial de Cálculo */}
             <div className="row p-4">
                 <div className="col-12">
-                    <h3>
+                    <h3>                    
                         <input id="tituloLocal" type="text" placeholder="Digite aqui o seu título - Ex: Cálculo do Pavimento Térreo"></input>
                     </h3>
                     <h4>

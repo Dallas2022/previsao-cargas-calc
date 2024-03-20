@@ -64,7 +64,6 @@ function Local(props) {
 
                 {/* Linha do Nome do Local com Botão de Remover */}
                 <LocalHeader {...props}></LocalHeader>
-
                 {/* Linha das Dimensões */}
                 <Dimensoes idLocal={props.id}></Dimensoes>
 
