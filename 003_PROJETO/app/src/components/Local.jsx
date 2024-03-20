@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuid } from 'uuid';
+import { useContext } from "react";
+import Contexto from "../providers/Contexto";
 
 import IluminacaoLinhaHeader from "./IluminacaoLinhaHeader";
 import TugLinhaHeader from "./TugLinhaHeader";
@@ -13,6 +15,9 @@ import Tue from './Tue'
 import '../estilos/Local.css'
 
 function Local(props) {
+
+    //Utilização dos Recursos Contexto Público.
+    const publico = useContext(Contexto)
 
     const [mtzIlum, setMtzIlum] = useState(() => {
         return []
@@ -32,6 +37,12 @@ function Local(props) {
     }
 
     function removerLinhaIlum(id) {
+
+        // Lógica Para Subtrair os Dados de Um Local Excluído da Tabela de Resultados.        
+        publico.setMtzPotTotIlum(publico.mtzPotTotIlum.filter(el => el[0] !== id))
+        publico.setControleRender(!publico.controleRender)
+
+        // Lógica Para Remover o Bloco da Interface Gráfica da Linha de Iluminação.
         let mtzTemp = mtzIlum.filter(el => el !== id)
         setMtzIlum(mtzTemp)
     }
@@ -42,6 +53,12 @@ function Local(props) {
     }
 
     function removerLinhaTug(id) {
+
+        // Lógica Para Subtrair os Dados de Um Local Excluído da Tabela de Resultados.        
+        publico.setMtzPotTotTUG(publico.mtzPotTotTUG.filter(el => el[0] !== id))
+        publico.setControleRender(!publico.controleRender)
+
+        // Lógica Para Remover o Bloco da Interface Gráfica da Linha de TUG.        
         let mtzTemp = mtzTug.filter(el => el !== id)
         setMtzTug(mtzTemp)
     }
@@ -52,6 +69,12 @@ function Local(props) {
     }
 
     function removerLinhaTue(id) {
+
+        // Lógica Para Subtrair os Dados de Um Local Excluído da Tabela de Resultados.        
+        publico.setMtzPotTotTUE(publico.mtzPotTotTUE.filter(el => el[0] !== id))
+        publico.setControleRender(!publico.controleRender)
+
+        // Lógica Para Remover o Bloco da Interface Gráfica da Linha de TUE.        
         let mtzTemp = mtzTue.filter(el => el !== id)
         setMtzTue(mtzTemp)
     }
@@ -59,7 +82,7 @@ function Local(props) {
 
     return (
         <>
-        {/* <h3 style={{color: "white"}} >ID LOCAL: {props.id}</h3> */}
+            {/* <h3 style={{color: "white"}} >ID LOCAL: {props.id}</h3> */}
             <div className="container divQuadroLocal">
 
                 {/* Linha do Nome do Local com Botão de Remover */}
