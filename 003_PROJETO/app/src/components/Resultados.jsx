@@ -73,6 +73,9 @@ function Resultados() {
                 <div className="col-12 align-self-center">
                     <button type="button" className="gerarPDF">GERAR MEMORIAL EM PDF</button>
                 </div>
+                <div className="col-12 align-self-center">
+                    <a className="link" href="https://powerbymy.com/">IR PARA O SITE</a>
+                </div>
             </div>
 
         </>

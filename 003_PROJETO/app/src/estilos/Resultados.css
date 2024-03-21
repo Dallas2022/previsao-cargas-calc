@@ -36,6 +36,7 @@
     font-weight: 700;
     color: white;
     margin-top: 30px;
+    margin-bottom: 35px;
     background-color: rgb(35, 212, 35);
     border: outset 1px white;    
     border-radius: 10px;
@@ -45,4 +46,17 @@
     background-color: rgb(12, 163, 12);
     border: solid 2px white;
     box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+}
+
+.link {
+    padding: 10px 40px 10px 40px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    border-radius: 20px;
+}
+
+.link:hover {
+    box-shadow: 2px 2px 8px rgb(207, 206, 206);
+    cursor: pointer;
 }
