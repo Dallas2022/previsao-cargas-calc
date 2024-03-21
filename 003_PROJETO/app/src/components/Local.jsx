@@ -96,7 +96,7 @@ function Local(props) {
                 <IluminacaoLinhaHeader idLocal={props.id} fnc_inserir={inserirLinhaIlum}></IluminacaoLinhaHeader>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzIlum.map(el => { return <Iluminacao key={el} id={el} fnc_remover={removerLinhaIlum} fnc_inserir={inserirLinhaIlum} /> })}
+                {mtzIlum.map(el => { return <Iluminacao key={el} id={el} idPai={props.id} fnc_remover={removerLinhaIlum} fnc_inserir={inserirLinhaIlum} /> })}
 
 
 
@@ -106,7 +106,7 @@ function Local(props) {
                 <TugLinhaHeader idLocal={props.id} fnc_inserir={inserirLinhaTug}></TugLinhaHeader>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzTug.map(el => { return <Tug key={el} id={el} fnc_remover={removerLinhaTug} fnc_inserir={inserirLinhaTug}></Tug> })}
+                {mtzTug.map(el => { return <Tug key={el} id={el} idPai={props.id} fnc_remover={removerLinhaTug} fnc_inserir={inserirLinhaTug}></Tug> })}
 
 
 
@@ -116,7 +116,7 @@ function Local(props) {
                 <TueLinhaHeader idLocal={props.id} fnc_inserir={inserirLinhaTue}></TueLinhaHeader>
 
                 {/* Linhas de Entrada - Componentes Adicionados Dinamicamente */}
-                {mtzTue.map(el => { return <Tue key={el} id={el} fnc_remover={removerLinhaTue} fnc_inserir={inserirLinhaTue}></Tue> })}
+                {mtzTue.map(el => { return <Tue key={el} id={el} idPai={props.id} fnc_remover={removerLinhaTue} fnc_inserir={inserirLinhaTue}></Tue> })}
 
             </div>
         </>

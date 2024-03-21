@@ -16,7 +16,7 @@ function TueLinhaHeader(props) {
 
     // Coleção de Dados Para Serem Enviados para Calcular no "Público".
     // Ordem dos Dados - Id, Aparelho e Pot. Unit. (W).
-    const valores = [props.idLocal, Aparelho, PotUnitW]
+    const valores = [props.idLocal, Aparelho, PotUnitW, props.idLocal]
 
     //Utilização dos Recursos Contexto Público.
     const publico = useContext(Contexto)

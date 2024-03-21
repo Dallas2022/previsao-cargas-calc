@@ -16,7 +16,7 @@ function Tug(props) {
 
     // Coleção de Dados Para Serem Enviados para Calcular no "Público".
     // Ordem dos Dados - Id, Aparelho e Pot. Unit. (W).
-    const valores = [props.id, NumPontos, PotUnitW]
+    const valores = [props.id, NumPontos, PotUnitW, props.idPai]
 
     //Utilização dos Recursos Contexto Público.
     const publico = useContext(Contexto)

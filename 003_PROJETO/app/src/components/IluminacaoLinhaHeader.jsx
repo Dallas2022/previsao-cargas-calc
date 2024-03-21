@@ -19,7 +19,7 @@ function IluminacaoLinhaHeader(props) {
 
     // Coleção de Dados Para Serem Enviados para Calcular no "Público".
     // Ordem dos Dados - Id, Nº de Pontos, Pot. Unit. (W) e Nº de Arandelas (60W).
-    const valores = [props.idLocal, NumPontos, PotUnitW, NumArandelas60W]
+    const valores = [props.idLocal, NumPontos, PotUnitW, NumArandelas60W, props.idLocal]
 
     //Utilização dos Recursos Contexto Público.
     const publico = useContext(Contexto)
@@ -43,23 +43,6 @@ function IluminacaoLinhaHeader(props) {
                     <button type="button" onClick={() => { props.fnc_inserir() }} className="adicionaIluminacao">+</button>
                 </div>
             </div>
-
-            {/* Linha Inical dos Valores de Iluminação - Esta linha não usa o botão de exclusão */}
-            {/* <h3>{valores[0]}</h3>
-            <h3>{valores[1]}</h3>
-            <h3>{valores[2]}</h3>
-            <h3>{valores[3]}</h3> */}
-            {/* MATRIZ PUBLICA */}
-            {/* {publico.mtzPotTotIlum.map(el => {
-                return (
-                    <div>
-                        <h5>M GLOB : {el}</h5>
-                    </div>
-                )
-            })} */}
-            {/* <h2>ID Header : {props.idLocal}</h2> */}
-
-
 
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-3 col-sm-12">
