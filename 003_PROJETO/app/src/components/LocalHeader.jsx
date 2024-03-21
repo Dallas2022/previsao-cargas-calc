@@ -7,7 +7,7 @@ function LocalHeader(props) {
             <div className="row align-items-center">
                 <div className="col-lg-9 col-sm-12">
                     <h5>
-                        <input type="text" className="dadosLocal" placeholder="Nome do Local ou Dependência – Ex: Sala de Espera" />
+                        <input type="text" className="dadosLocal" placeholder={props.placeholderNome} />
                     </h5>
                 </div>
                 <div className="col-lg-3 col-sm-12">

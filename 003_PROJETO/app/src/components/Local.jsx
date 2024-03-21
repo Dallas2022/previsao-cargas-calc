@@ -77,6 +77,7 @@ function Local(props) {
         // Lógica Para Remover o Bloco da Interface Gráfica da Linha de TUE.        
         let mtzTemp = mtzTue.filter(el => el !== id)
         setMtzTue(mtzTemp)
+        
     }
 
 

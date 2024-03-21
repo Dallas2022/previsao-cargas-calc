@@ -57,7 +57,7 @@ function IluminacaoLinhaHeader(props) {
                 </div>
                 <div className="col-lg-3 col-sm-12">
                     <h5>
-                        <input type="number" className="dadosLocal" onChange={e => setNumArandelas60W(e.target.value)} placeholder="Nº de Arandelas (60W)" />
+                        <input type="number" className="dadosLocal" onChange={e => setNumArandelas60W(e.target.value)} placeholder="Nº Arandelas, 60W" />
                     </h5>
                 </div>
             </div>

@@ -43,8 +43,8 @@ function TugLinhaHeader(props) {
         
         if(perimetro.length > 0) {
 
-            // Cálculo do Número de Pontos de TUG Baseado no Perímetro.
-            if(perimetro[0][2] <= 6) {
+            // Cálculo do Número de Pontos de TUG Baseado no Perímetro.          
+            if(perimetro[0][2] <= 6 && perimetro[0][2] > 0) {
                 setPontosPerimetro(1)
             } else {
                 let valor = perimetro[0][2] / 5
