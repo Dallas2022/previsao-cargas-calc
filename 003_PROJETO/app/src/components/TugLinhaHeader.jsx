@@ -1,10 +1,17 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import React, {useState, useEffect} from "react";
 import { useContext } from "react";
 import Contexto from "../providers/Contexto";
 
+// Este arquivo renderiza a primeira linha dos dados das tomadas de uso geral
+
 function TugLinhaHeader(props) {
 
-    // Valores Dinâmicos para Interação com a Coleção de Dados.
+    // Valores dinâmicos para interação com a coleção de dados
     const [NumPontos, setNumPontos] = useState(() => {
         return 0
     })
@@ -14,20 +21,20 @@ function TugLinhaHeader(props) {
     })
 
 
-    // Valores Dinâmicos para Interação Com o Campo de Dimensões (Perímetro).
+    // Valores dinâmicos para interação com o campo de dimensões (Perímetro)
     const [PontosPerimetro, setPontosPerimetro] = useState(() => {
         return 0
     })
     
 
-    // Coleção de Dados Para Serem Enviados para Calcular no "Público".
-    // Ordem dos Dados - Id, Aparelho e Pot. Unit. (W).
+    // Coleção de dados para serem enviados para calcular no contexto público
+    // Ordem dos dados - Id, Aparelho, Pot. Unit. (W) e Id do Local
     const valores = [props.idLocal, NumPontos, PotUnitW, props.idLocal]
 
-    //Utilização dos Recursos Contexto Público.
+    //Utilização dos recursos do contexto público
     const publico = useContext(Contexto)
 
-    // A Coleção é Atualizada Cada Vez que Um Valor For Alterado.
+    // A coleção é atualizada cada vez que um valor for alterado
     useEffect(() => {
                 
         publico.setMtzPotTotTUG(publico.mtzPotTotTUG.filter(el => el[0] !== props.idLocal))       
@@ -36,14 +43,14 @@ function TugLinhaHeader(props) {
 
     }, valores)
 
-    // Verifica a Atualização do Perímertro - Calcula o Número Mínimo de Pontos.
+    // Verifica a atualização do perímertro - Calcula o número mínimo de pontos
     useEffect(() => {
 
         let perimetro = publico.mtzAreaTotal.filter(el => el[0] === props.idLocal)
         
         if(perimetro.length > 0) {
 
-            // Cálculo do Número de Pontos de TUG Baseado no Perímetro.          
+            // Cálculo do número de pontos de TUG baseado no perímetro
             if(perimetro[0][2] <= 6 && perimetro[0][2] > 0) {
                 setPontosPerimetro(1)
             } else {
@@ -58,7 +65,7 @@ function TugLinhaHeader(props) {
     
     return (
         <>
-            {/* Linha das TUG's - Tomadas de Uso Geral */}
+            {/* Primeira linha das TUG's - Tomadas de uso geral */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-6 col-sm-6">
                     <label className="lblEntradas">T.U.G :</label>
@@ -69,7 +76,7 @@ function TugLinhaHeader(props) {
                 </div>
             </div>
 
-            {/* Linha Inical dos Valores de TUG - Esta linha não usa o botão de exclusão */}
+            {/* Dados de entrada fornecidos pelo usuário */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-4 col-sm-12">
                     <h5>

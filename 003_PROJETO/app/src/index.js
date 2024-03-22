@@ -1,3 +1,8 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';

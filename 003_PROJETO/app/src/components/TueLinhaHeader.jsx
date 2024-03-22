@@ -1,10 +1,17 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import Contexto from "../providers/Contexto";
 
+// Este arquivo renderiza a primeira linha dos dados das tomadas de uso específico
+
 function TueLinhaHeader(props) {
 
-    // Valores Dinâmicos para Interação com a Coleção de Dados.
+    // Valores dinâmicos para interação com a coleção de dados
     const [Aparelho, setAparelho] = useState(() => {
         return ""
     })
@@ -13,15 +20,14 @@ function TueLinhaHeader(props) {
         return 0
     })
 
-
-    // Coleção de Dados Para Serem Enviados para Calcular no "Público".
-    // Ordem dos Dados - Id, Aparelho e Pot. Unit. (W).
+    // Coleção de dados para serem enviados para calcular no contexto público
+    // Ordem dos dados - Id, Aparelho, Pot. Unit. (W) e Id do Local
     const valores = [props.idLocal, Aparelho, PotUnitW, props.idLocal]
 
-    //Utilização dos Recursos Contexto Público.
+    //Utilização dos recursos do contexto público
     const publico = useContext(Contexto)
 
-    // A Coleção é Atualizada Cada Vez que Um Valor For Alterado.
+    // A coleção é atualizada cada vez que um valor for alterado
     useEffect(() => {
                 
         publico.setMtzPotTotTUE(publico.mtzPotTotTUE.filter(el => el[0] !== props.idLocal))       
@@ -33,7 +39,7 @@ function TueLinhaHeader(props) {
 
     return (
         <>
-            {/* Linha das TUE's - Tomadas de Uso Específico */}
+            {/* Primeira linha das TUE's - Tomadas de uso específico */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-6 col-sm-6">
                     <label className="lblEntradas">T.U.E :</label>
@@ -41,10 +47,7 @@ function TueLinhaHeader(props) {
                 </div>
             </div>
 
-
-            {/* <h2>ID Header : {props.idLocal}</h2> */}
-
-            {/* Linha Inical dos Valores de TUG - Esta linha não usa o botão de exclusão */}
+            {/* Dados de entrada fornecidos pelo usuário */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-4 col-sm-12">
                     <h5>

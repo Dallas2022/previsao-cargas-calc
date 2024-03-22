@@ -1,10 +1,17 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import Contexto from "../providers/Contexto";
 
+// Este arquivo renderiza a primeira linha dos dados de iluminação
+
 function IluminacaoLinhaHeader(props) {
 
-    // Valores Dinâmicos para Interação com a Coleção de Dados.
+    // Valores dinâmicos para interação com a coleção de dados
     const [NumPontos, setNumPontos] = useState(() => {
         return 0
     })
@@ -17,14 +24,14 @@ function IluminacaoLinhaHeader(props) {
         return 0
     })
 
-    // Coleção de Dados Para Serem Enviados para Calcular no "Público".
-    // Ordem dos Dados - Id, Nº de Pontos, Pot. Unit. (W) e Nº de Arandelas (60W).
+    // Coleção de dados para serem enviados para calcular no contexto público
+    // Ordem dos dados - Id, Nº de Pontos, Pot. Unit. (W), Nº de Arandelas (60W) e Id do Local
     const valores = [props.idLocal, NumPontos, PotUnitW, NumArandelas60W, props.idLocal]
 
-    //Utilização dos Recursos Contexto Público.
+    //Utilização dos recursos do contexto público
     const publico = useContext(Contexto)
 
-    // A Coleção é Atualizada Cada Vez que Um Valor For Alterado.
+    // A coleção é atualizada cada vez que um valor for alterado
     useEffect(() => {
                 
         publico.setMtzPotTotIlum(publico.mtzPotTotIlum.filter(el => el[0] !== props.idLocal))       
@@ -36,7 +43,7 @@ function IluminacaoLinhaHeader(props) {
 
     return (
         <>
-            {/* Linha da Iluminação */}
+            {/* Primeira linha da iluminação */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-12 col-sm-6">
                     <label className="lblEntradas">Iluminação :</label>
@@ -44,6 +51,7 @@ function IluminacaoLinhaHeader(props) {
                 </div>
             </div>
 
+            {/* Dados de entrada fornecidos pelo usuário */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-3 col-sm-12">
                     <h5>

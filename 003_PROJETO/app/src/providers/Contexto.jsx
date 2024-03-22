@@ -1,17 +1,26 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import { createContext, useState, useEffect } from "react";
+
+// Este arquivo de contexto concentra as matrizes que recebem os dados de
+// cada tabela criada de forma dinâmica. Aqui também são realizados os
+// cálculos e fornecidos os resultados
 
 const Contexto = createContext()
 
 export function ContextoProvider({ children }) {
 
-    // Este State é Utilizado Para Disparar o useEffect Quando as Matrizes de Dados 
-    // Usadas nos Componentes São Atualizizadas.
+    // Este state é utilizado para disparar o useEffect quando as matrizes de
+    // dados usadas nos componentes são atualizadas
     const [controleRender, setControleRender] = useState(() => {
         return false
     })
 
 
-    // States Utilizados para o Cálculo da Área Total.
+    // States utilizados para o cálculo da área total
     const [mtzAreaTotal, setMtzAreaTotal] = useState(() => {
         return []
     })
@@ -21,7 +30,7 @@ export function ContextoProvider({ children }) {
     })
 
 
-    // States Utilizados para o Cálculo da Potência Total do Sistema de Iluminação.
+    // States utilizados para o cálculo da potência total do sistema de iluminação
     const [mtzPotTotIlum, setMtzPotTotIlum] = useState(() => {
         return []
     })
@@ -31,7 +40,7 @@ export function ContextoProvider({ children }) {
     })
 
 
-    // States Utilizados para o Cálculo da Potência Total das Tomadas de Uso Geral - TUG.
+    // States utilizados para o cálculo da potência total das tomadas de uso geral - TUG
     const [mtzPotTotTUG, setMtzPotTotTUG] = useState(() => {
         return []
     })
@@ -41,7 +50,7 @@ export function ContextoProvider({ children }) {
     })
 
 
-    // States Utilizados para o Cálculo da Potência Total das Tomadas de Uso Específico - TUE.
+    // States utilizados para o cálculo da potência total das tomadas de uso específico - TUE
     const [mtzPotTotTUE, setMtzPotTotTUE] = useState(() => {
         return []
     })
@@ -51,15 +60,16 @@ export function ContextoProvider({ children }) {
     })
 
 
-    // States Utilizados para o Cálculo da Potência Total Geral - Somatória das Potências.
+    // States utilizados para o cálculo da potência total geral - Somatória das potências
     const [somatoriaPotTotGeralW, setSomatoriaPotTotGeralW] = useState(() => {
         return 0
     })
 
 
+    // Este "useEffect" é executado toda vez que um dado for alterado pelo usuário
     useEffect(() => {
 
-        // Lógica de Cálculo da Área Total do Dimensionamento.
+        // Lógica de cálculo da área total do dimensionamento
         let somatoriaAreaTotal = 0
 
         mtzAreaTotal.forEach( el => 
@@ -69,7 +79,7 @@ export function ContextoProvider({ children }) {
         setSomatoriaAreaTotal(somatoriaAreaTotal)
 
 
-        // Lógica de Cálculo da Potência Total do Sistema de Iluminação.
+        // Lógica de cálculo da potência total do sistema de iluminação
         let somatoriaIlum = 0
         
         mtzPotTotIlum.forEach(el => {
@@ -79,7 +89,7 @@ export function ContextoProvider({ children }) {
         setSomatoriaIlumPotTotW(somatoriaIlum)
 
 
-        // Lógica de Cálculo da Potência Total das Tomadas de Uso Geral - TUG.
+        // Lógica de cálculo da potência total das tomadas de uso geral - TUG
         let somatoriaTUG = 0
 
         mtzPotTotTUG.forEach(el => {
@@ -89,7 +99,7 @@ export function ContextoProvider({ children }) {
         setSomatoriaTUGPotTotW(somatoriaTUG)
 
 
-        // Lógica de Cálculo da Potência Total das Tomadas de Uso Específico - TUE.
+        // Lógica de cálculo da potência total das tomadas de uso específico - TUE
         let somatoriaTUE = 0
 
         mtzPotTotTUE.forEach(el => {
@@ -99,7 +109,7 @@ export function ContextoProvider({ children }) {
         setSomatoriaTUEPotTotW(somatoriaTUE)
 
 
-        // Lógica de Cálculo da Potência Total Geral - Somatória das Potências.
+        // Lógica de cálculo da potência total geral - Somatória das potências
         setSomatoriaPotTotGeralW(somatoriaIlum + somatoriaTUG + somatoriaTUE)
 
     }, [controleRender])
@@ -107,6 +117,7 @@ export function ContextoProvider({ children }) {
 
 return (
     <>
+        {/* Recursos disponibilizados de forma pública para realização dos cálculos */}
         <Contexto.Provider value={{
             mtzAreaTotal, setMtzAreaTotal,
             somatoriaAreaTotal,

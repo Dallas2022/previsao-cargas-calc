@@ -1,26 +1,34 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import React from "react";
 import { useContext } from "react";
 import Contexto from "../providers/Contexto";
+
+// Este arquivo renderiza a tabela com os resultados dos cálculos
 
 import '../estilos/Resultados.css'
 
 function Resultados() {
 
+    //Utilização dos recursos do contexto público
     const publico = useContext(Contexto)
 
     return (
         <>
+            {/* Tabela gerada com os resultados dos valores calculados */}
             <div className="container divQuadro">
                 <div className="row pt-2 pb-2">
-                    {/* Tabela Gerada com os Resultados dos Valores Calculados */}
 
-                    {/* Título da Tabela*/}
+                    {/* Título da tabela*/}
                     <div className="col-12 align-self-center">
                         <h2 className="text-center">Resultados do Cálculo</h2>
                     </div>
                 </div>
 
-                {/* Resultados Gerados pelo Cálculo */}
+                {/* Resultados gerados pelos cálculos */}
                 <div className="row divLinhaAcima pt-2">
                     <div className="col-lg-6 col-sm-12">
                         <label className="lblResultados">Área Total do Dimensionamento :</label>
@@ -30,6 +38,7 @@ function Resultados() {
                     </div>
                 </div>
 
+                {/* Potência total do sistema de iluminação */}
                 <div className="row">
                     <div className="col-lg-6 col-sm-12">
                         <label className="lblResultados">Potência Total do Sistema de Iluminação :</label>
@@ -39,6 +48,7 @@ function Resultados() {
                     </div>
                 </div>
 
+                {/* Potência total das tomadas de uso geral - TUG */}
                 <div className="row">
                     <div className="col-lg-6 col-sm-12">
                         <label className="lblResultados">Potência Total das Tomadas de Uso Geral :</label>
@@ -48,6 +58,7 @@ function Resultados() {
                     </div>
                 </div>
 
+                {/* Potência total das tomadas de uso específico - TUE */}
                 <div className="row divLinhaAbaixo pb-2">
                     <div className="col-lg-6 col-sm-12">
                         <label className="lblResultados">Potência Total das Tomadas de Uso Específico :</label>
@@ -57,7 +68,7 @@ function Resultados() {
                     </div>
                 </div>
 
-                {/* Potência Total do Dimensionamento */}
+                {/* Potência total do dimensionamento */}
                 <div className="row pt-2 pb-2 ">
                     <div className="col-lg-6 col-sm-12">
                         <label className="lblResultados">Potência Total (Somatória das Potências) :</label>
@@ -68,10 +79,10 @@ function Resultados() {
                 </div>
             </div>
 
-            {/* Botão para Imprimir */}
+            {/* Botão para imprimir */}
             <div className="row text-center pb-5">
                 <div className="col-12 align-self-center">
-                    <button type="button" onClick={() => {window.print()}} className="gerarPDF">IMPRIMIR</button>
+                    <button type="button" onClick={() => { window.print() }} className="gerarPDF">IMPRIMIR</button>
                 </div>
             </div>
 

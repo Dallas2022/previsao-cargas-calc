@@ -1,3 +1,8 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import React from "react";
 import { Routes, Route, Link } from 'react-router-dom'
 import Abertura from "./components/Abertura";

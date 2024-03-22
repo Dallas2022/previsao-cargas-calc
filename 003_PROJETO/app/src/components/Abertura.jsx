@@ -1,20 +1,27 @@
+
+// Código elaborado por: Nelson Braga
+// Cargo: Desenvolvedor Fullstack
+// Data: 22/03/2024
+
 import React from 'react'
 import '../estilos/Abertuta.css'
 import imgEngenheiro from '../imagens/engenheiro.gif'
 import { Routes, Route, Link } from 'react-router-dom'
 
+// Este arquivo contém a tela inicial do sistema
+
 function Abertura() {
     return (
         <div className="container-fluid">
             <div>
-                {/* Título do App  */}
+                {/* Título do app  */}
                 <div className='row'>
                     <div id="titulo" className='col-12'>
                         <h1>Calculadora de Previsão de Cargas</h1>
                     </div>
                 </div>
 
-                {/* Conteúdo da Página */}
+                {/* Conteúdo da página */}
                 <div id="divConteudo" className='row'>
                     <div id="divImagem" className='col-md-5 col-sm-12'>
                         <img src={imgEngenheiro} alt="engenheiro.gif" />
@@ -25,7 +32,7 @@ function Abertura() {
                             <p>Se você deseja realizar um cálculo de previsão de cargas de forma fácil e rápida, você está no lugar certo. Clique no botão abaixo para iniciar</p>
                         </div>
 
-                        {/* Botão de Início */}
+                        {/* Botão de início */}
                         <Link to="/locais"  className="btn btn-success w-100"><h4>INICIAR</h4></Link>
                     </div>                    
                 </div>
