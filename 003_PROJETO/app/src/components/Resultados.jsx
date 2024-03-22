@@ -68,13 +68,10 @@ function Resultados() {
                 </div>
             </div>
 
-            {/* Botão de Geração de Memorial em PDF */}
+            {/* Botão para Imprimir */}
             <div className="row text-center pb-5">
                 <div className="col-12 align-self-center">
-                    <button type="button" className="gerarPDF">GERAR MEMORIAL EM PDF</button>
-                </div>
-                <div className="col-12 align-self-center">
-                    <a className="link" href="https://powerbymy.com/">IR PARA O SITE</a>
+                    <button type="button" onClick={() => {window.print()}} className="gerarPDF">IMPRIMIR</button>
                 </div>
             </div>
 

@@ -115,6 +115,13 @@ function Memorial() {
             {/* Tabela de Resultados - Mostra se Existir Pelo Menos uma Tabela */}
             {mtz.length > 0 ? <Resultados /> : null}
 
+            
+            <div className="row text-center pb-5">
+                <div className="col-12 align-self-center">
+                    <a className="link" href="https://powerbymy.com/">IR PARA O SITE</a>
+                </div>
+            </div>
+
         </div>
     )
 }
