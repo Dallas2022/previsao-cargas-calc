@@ -43,3 +43,15 @@ Data: 22/03/2024
     border: solid 2px white;
     box-shadow: 2px 2px 8px rgb(207, 206, 206);    
 }
+
+.logotipo {
+    width: 160px;
+    height: 80px;
+}
+
+p {
+    color: aliceblue;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif
+}
