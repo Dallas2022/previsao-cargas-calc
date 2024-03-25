@@ -28,7 +28,7 @@ function Abertura() {
                     </div>
                     <div id="divCartao" className='col-md-7 col-sm-12 align-self-center'>
                         <div id="divTexto">
-                            <p className='text-center'>Olá Engenheiro, seja muito bem-vindo !</p>
+                            <p className='text-center'>Olá profissional de elétrica, seja muito bem-vindo !</p>
                             <p>Se você deseja realizar um cálculo de previsão de cargas de forma fácil e rápida, você está no lugar certo. Clique no botão abaixo para iniciar</p>
                         </div>
 
