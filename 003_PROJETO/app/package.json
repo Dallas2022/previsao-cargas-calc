@@ -1,5 +1,6 @@
 {
   "name": "app",
+  "homepage": "http://app.react.calculadora.previsao.de.cargas.powerbymy.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

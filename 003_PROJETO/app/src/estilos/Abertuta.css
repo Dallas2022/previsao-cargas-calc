@@ -47,6 +47,7 @@ Data: 22/03/2024
 
 body {    
     background: linear-gradient(317deg, #666666, #262626, #0D0D0D);
+    background-attachment: fixed;
 }
 
 #titulo {
@@ -56,7 +57,7 @@ body {
 }
 
 #divConteudo {
-    padding: 40px 0px 30px 20px;
+    padding: 40px 0px 0px 20px;
 }
 
 #divImagem {
