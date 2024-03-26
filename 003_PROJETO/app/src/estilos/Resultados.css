@@ -9,15 +9,15 @@ Data: 22/03/2024
 
 .divQuadro {
     color: rgb(255, 255, 255);
-    border: inset 2px white;
+    border: inset 0.125em white;
 }
 
 .divLinhaAcima {
-    border-top: solid 1px white;
+    border-top: solid 0.0625em white;
 }
 
 .divLinhaAbaixo {
-    border-bottom: solid 1px white;
+    border-bottom: solid 0.0625em white;
 }
 
 .resultados {
@@ -25,47 +25,47 @@ Data: 22/03/2024
     font-weight: 800;
     text-align: center;    
     color: rgb(240, 233, 233);
-    padding: 6px;
-    border-radius: 10px;
+    padding: 0.375em;
+    border-radius: 0.625em;
     border-color: #4473c44d;
     background-color: #4473c44d;    
-    margin: 4px;
+    margin: 0.25em;
 }
 
 .lblResultados {
     font-size: 1.2em;
     font-weight: 600;
     color: white;
-    padding: 10px 20px 10px 20px;
+    padding: 0.625em 1.25em 0.625em 1.25em;
 }
 
 .gerarPDF {
-    padding: 10px 50px 10px 50px;    
+    padding: 0.625em 3.125em 0.625em 3.125em;    
     font-size: 1.5em;
     font-weight: 700;
     color: white;
-    margin-top: 30px;
-    margin-bottom: 35px;
+    margin-top: 1.875em;
+    margin-bottom: 2.1875em;
     background-color: rgb(35, 212, 35);
-    border: outset 1px white;    
-    border-radius: 10px;
+    border: outset 0.0625em white;    
+    border-radius: 0.625em;
 }
 
 .gerarPDF:hover {
     background-color: rgb(12, 163, 12);
-    border: solid 2px white;
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+    border: solid 0.125em white;
+    box-shadow: 0.125em 0.125em 0.5em rgb(207, 206, 206);    
 }
 
 .link {
-    padding: 10px 40px 10px 40px;
+    padding: 0.625em 2.5em 0.625em 2.5em;
     font-size: 1.5em;
     font-weight: 700;
     color: white;
-    border-radius: 20px;
+    border-radius: 1.25em;
 }
 
 .link:hover {
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);
+    box-shadow: 0.125em 0.125em 0.5em rgb(207, 206, 206);
     cursor: pointer;
 }

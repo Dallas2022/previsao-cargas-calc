@@ -9,39 +9,39 @@ Data: 22/03/2024
 
 @keyframes float {
     0% {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0em, 0em, 0em);
     }
 
     12% {
-        transform: translate3d(1px, 1px, 1px);
+        transform: translate3d(0.0625em, 0.0625em, 0.0625em);
     }
 
     25% {
-        transform: translate3d(2px, 2px, 2px);        
+        transform: translate3d(0.125em, 0.125em, 0.125em);        
     }
 
     37% {
-        transform: translate3d(3px, 3px, 3px);        
+        transform: translate3d(0.1875em, 0.1875em, 0.1875em);        
     }
 
     50% {
-        transform: translate3d(4px, 4px, 4px);
+        transform: translate3d(0.25em, 0.25em, 0.25em);
     }
 
     62% {
-        transform: translate3d(3px, 3px, 3px);
+        transform: translate3d(0.1875em, 0.1875em, 0.1875em);
     }
 
     75% {
-        transform: translate3d(2px, 2px, 2px);
+        transform: translate3d(0.125em, 0.125em, 0.125em);
     }
 
     87% {
-        transform: translate3d(1px, 1px, 1px);
+        transform: translate3d(0.0625em, 0.0625em, 0.0625em);
     }
 
     100% {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0em, 0em, 0em);
     }
 }
 
@@ -51,13 +51,13 @@ body {
 }
 
 #titulo {
-    padding-top: 20px;
+    padding-top: 3%;
     color: #FFC000;
     text-align: center;
 }
 
 #divConteudo {
-    padding: 40px 0px 0px 20px;
+    padding: 4% 0% 0% 4%;
 }
 
 #divImagem {
@@ -65,41 +65,40 @@ body {
 }
 
 #divCartao {
-    padding-right: 120px;
+    padding-right: 15%;
 }
 
 @media(max-width: 768px) {
     #divCartao {
-        margin-top: 30px;
-        padding-right: 30px;
+        margin-top: 8%;
+        padding-right: 8%;
     }
 }
 
 #divTexto {
-    line-height: 32px;
+    line-height: 1.85em;
     font-size: 1.1em;
     font-weight: 500;
     color: white;
-    padding: 40px;
-    border-radius: 30px;
+    padding: 2.5em 2.8125em 1.5625em 2.8125em;
+    border-radius: 2em;
     background-color: #4473c44d;
 }
 
 #divTexto:hover {
-    border: solid 2px white;
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);
+    border: solid 0.1em white;
+    box-shadow: 0.125em 0.125em 1em rgb(207, 206, 206);
 }
 
 .btn-success {
-    margin-top: 40px;
-    margin-bottom: 50px;
-    background-color: rgb(35, 212, 35) !important;
-    transform: translate3d(0px, 0px, 0px);
+    margin-top: 9%;
+    margin-bottom: 10%;
+    background-color: rgb(12, 163, 12) !important;
+    transform: translate3d(0, 0, 0);
     animation: float 6s ease-in-out infinite;
 }
 
-.btn-success:hover {
-    background-color: rgb(12, 163, 12) !important;
-    border: solid 2px white;
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);
+.btn-success:hover {    
+    background-color: rgb(35, 212, 35) !important;
+    box-shadow: 0.125em 0.125em 0.5em rgb(207, 206, 206);
 }

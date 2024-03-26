@@ -12,46 +12,46 @@ Data: 22/03/2024
     font-weight: 700;
     text-align: center;    
     color: rgb(240, 233, 233);
-    padding: 10px;
-    border-radius: 30px;
+    padding: 0.625em;
+    border-radius: 1.875em;
     border-color: #4473c44d;
     background-color: #4473c44d;
-    margin-bottom: 8px;
+    margin-bottom: 0.5em;
 }
 
 .lblAdicionarLocal {
     font-size: 1.1em;
     font-weight: 500;
     color: white;
-    padding: 10px 20px 10px 10px;
+    padding: 0.625em 1.25em 0.625em 0.625em;
 }
 
 .adicionalLocal {
     font-size: 1.5em;
     font-weight: 700;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 30px;    
+    margin-top: 0.625em;
+    margin-bottom: 1.875em;    
     background-color: rgb(35, 212, 35);
-    border: outset 1px white;
-    width: 60px;
-    border-radius: 10px;
+    border: outset 0.0625em white;
+    width: 3.75em;
+    border-radius: 0.625em;
 }
 
 .adicionalLocal:hover {
     background-color: rgb(12, 163, 12);
-    border: solid 2px white;
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+    border: solid 0.125em white;
+    box-shadow: 0.125em 0.125em 0.5em rgb(207, 206, 206);    
 }
 
 .logotipo {
-    width: 160px;
-    height: 80px;
+    width: 10em;
+    height: 5em;
 }
 
 p {
     color: aliceblue;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 0.125em;
     font-family: Arial, Helvetica, sans-serif
 }

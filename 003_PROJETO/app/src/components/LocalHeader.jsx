@@ -15,14 +15,14 @@ function LocalHeader(props) {
             <div className="row align-items-center">
 
                 {/* Identificação do local */}
-                <div className="col-lg-9 col-sm-12">
+                <div className="col-lg-8 col-sm-12">
                     <h5>
                         <input type="text" className="dadosLocal" placeholder={props.placeholderNome} />
                     </h5>
                 </div>
 
                 {/* Botão para remoção do local */}
-                <div className="col-lg-3 col-sm-12">
+                <div className="col-lg-4 col-sm-12 text-end">
                     <label className="lblRemoverLocal">Remover Local</label>
                     <button type="button" onClick={() => { props.fnc_remover(props.id) }} className="removerLocal">-</button>
                 </div>

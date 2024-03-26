@@ -9,16 +9,16 @@ Data: 22/03/2024
 
 .divQuadroLocal {
     color: rgb(255, 255, 255);
-    border: inset 2px white;
-    margin-bottom: 50px;
+    border: inset 0.125em white;
+    margin-bottom: 3.125em;
 }
 
 .divLinhaCima {
-    border-top: solid 1px white;
+    border-top: solid 0.0625em white;
 }
 
 .divLinhaBaixo {
-    border-bottom: solid 1px white;
+    border-bottom: solid 0.0625em white;
 }
 
 .dadosLocal {
@@ -26,11 +26,11 @@ Data: 22/03/2024
     font-weight: 700;
     text-align: center;    
     color: rgb(240, 233, 233);
-    padding: 8px;
-    border-radius: 30px;
+    padding: 0.5em;
+    border-radius: 1.875em;
     border-color: #4473c44d;
     background-color: #4473c44d;
-    margin-top: 12px;
+    margin-top: 0.75em;
 }
 
 .dadoSaidaTUG {
@@ -38,52 +38,52 @@ Data: 22/03/2024
     font-weight: 700;
     text-align: center;    
     color: rgb(240, 233, 233);
-    padding: 8px;
-    border-radius: 10px;
+    padding: 0.5em;
+    border-radius: 0.625em;
     border-color: #f55516;
     background-color: #f55516;    
 }
 
 .lblDadoEntrada {
     color: white;
-    padding: 20px 20px 10px 10px;
+    padding: 1.1em 1.1em 0.625em 0.625em;
 }
 
 .lblRemoverLocal {
     font-size: 1.1em;
     font-weight: 500;
     color: white;
-    padding: 10px 20px 10px 10px;
+    padding: 0.625em 1.25em 0.625em 0.625em;
 }
 
 .removerLocal {
     font-size: 1.5em;
     font-weight: 700;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 50px;    
+    margin-top: 0.625em;
+    margin-bottom: 3.125em;    
     background-color: rgb(241, 10, 10);
-    border: outset 1px white;
-    width: 60px;
-    border-radius: 10px;
+    border: outset 0.0625em white;
+    width: 3.75em;
+    border-radius: 0.625em;
 }
 
 .removerLocal:hover {
     background-color: rgb(202, 13, 13);
-    border: solid 2px white;
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+    border: solid 0.125em white;
+    box-shadow: 0.125em 0.125em 0.5em rgb(207, 206, 206);    
 }
 
 .adicionaIluminacao, .adicionaTug {
     font-size: 1.5em;
     font-weight: 700;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
     background-color: rgb(35, 212, 35);
-    border: outset 1px white;
-    width: 60px;
-    border-radius: 10px;
+    border: outset 0.0625em white;
+    width: 3.75em;
+    border-radius: 0.625em;
 }
 
 .adicionaIluminacao:hover, .adicionaTug:hover {
@@ -96,8 +96,8 @@ Data: 22/03/2024
     color: white;
     font-weight: 600;
     font-size: 1.5em;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 0.625em;
+    margin-right: 0.625em;
 }
 
 .removerLinha {
@@ -105,13 +105,13 @@ Data: 22/03/2024
     font-weight: 700;
     color: white;
     background-color: rgb(241, 10, 10);
-    border: outset 1px white;
-    width: 60px;
-    border-radius: 10px;
+    border: outset 0.0625em white;
+    width: 3.75em;
+    border-radius: 0.625em;
 }
 
 .removerLinha:hover {
     background-color: rgb(202, 13, 13);
-    border: solid 2px white;
-    box-shadow: 2px 2px 8px rgb(207, 206, 206);    
+    border: solid 0.125em white;
+    box-shadow: 0.125em 0.125em 0.5em rgb(207, 206, 206);    
 }
