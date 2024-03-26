@@ -72,7 +72,7 @@ function TugLinhaHeader(props) {
                     <button type="button" onClick={() => { props.fnc_inserir() }} className="adicionaTug">+</button>
                 </div>
                 <div className="col-lg-6 col-sm-6">
-                    <input type="text" className="dadoSaidaTUG" readOnly value={PontosPerimetro == 1 ? PontosPerimetro + " ponto" : PontosPerimetro + " pontos"} />
+                    <input type="text" className="dadoSaidaTUG" readOnly value={PontosPerimetro == 1 ? "Nº Mín. NBR 5410 : " + PontosPerimetro + " ponto" : "Nº Mín. NBR 5410 : " + PontosPerimetro + " pontos"} />
                 </div>
             </div>
 

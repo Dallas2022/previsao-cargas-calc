@@ -60,7 +60,7 @@ function IluminacaoLinhaHeader(props) {
                 </div>
                 <div className="col-lg-3 col-sm-12">
                     <h5>
-                        <input type="number" className="dadosLocal" onChange={e => setPotUnitW(e.target.value)} placeholder="Pot. Unit. (W)" />
+                        <input type="number" className="dadosLocal" onChange={e => setPotUnitW(e.target.value)} placeholder="Pot. Unit. , 100W" />
                     </h5>
                 </div>
                 <div className="col-lg-3 col-sm-12">
