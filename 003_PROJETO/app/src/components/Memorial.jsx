@@ -29,7 +29,7 @@ function Memorial() {
     })
 
     const [consumidor, setConsumidor] = useState(() => {
-        return "Informe o consumidor - Ex: TIPO C / Atendido a 4 fios / 3F e 1N / Tensão 127 / 220V"
+        return "Informe o consumidor - Ex: Trifásico / 3F e 1N / Tensão 127 / 220V"
     })
 
     const [nomeLocal, setNomeLocal] = useState(() => {
@@ -62,7 +62,7 @@ function Memorial() {
         } else {
 
             setTitulo("Digite aqui o seu título - Ex: Cálculo do Pavimento Térreo")
-            setConsumidor("Informe o consumidor - Ex: TIPO C / Atendido a 4 fios / 3F e 1N / Tensão 127 / 220V")
+            setConsumidor("Informe o consumidor - Ex: Trifásico / 3F e 1N / Tensão 127 / 220V")
             setNomeLocal("Nome do Local ou Dependência – Ex: Sala de Espera")
 
         }
