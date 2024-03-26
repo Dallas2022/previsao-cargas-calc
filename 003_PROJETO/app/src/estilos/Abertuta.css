@@ -94,7 +94,7 @@ body {
     margin-bottom: 10%;
     background-color: rgb(12, 163, 12) !important;
     transform: translate3d(0, 0, 0);
-    animation: float 6s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
 
 .btn-success:hover {    

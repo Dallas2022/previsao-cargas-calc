@@ -14,6 +14,7 @@ import Resultados from "./Resultados";
 import '../estilos/Memorial.css'
 
 import logoPBM from "../imagens/LOGO_PBM.png"
+import logoWhatsapp from "../imagens/logoWhatsapp.png"
 
 // Este arquivo é chamado pela tela inicial do sistema. Ele renderiza a tela
 // na qual será possível o usuário montar seu memorial de acordo com as tabelas
@@ -34,6 +35,10 @@ function Memorial() {
 
     const [nomeLocal, setNomeLocal] = useState(() => {
         return "Nome do Local ou Dependência – Ex: Sala de Espera"
+    })
+
+    const [espacoBtnZap, setEspacoBtnZap] = useState(() => {
+        return "fixed-bottom right-100 p-3"
     })
 
     // Define o texto dos placeholders com base na dimensão da tela
@@ -58,13 +63,14 @@ function Memorial() {
             setTitulo("Título")
             setConsumidor("Consumidor")
             setNomeLocal("Local")
+            setEspacoBtnZap("fixed-bottom right-100 p-2")
 
         } else {
 
             setTitulo("Digite aqui o seu título - Ex: Cálculo do Pavimento Térreo")
             setConsumidor("Informe o consumidor - Ex: Trifásico / 3F e 1N / Tensão 127 / 220V")
             setNomeLocal("Nome do Local ou Dependência – Ex: Sala de Espera")
-
+            setEspacoBtnZap("fixed-bottom right-100 p-3")
         }
 
     }, [largura])
@@ -157,6 +163,13 @@ function Memorial() {
                 <div className="col-12 align-self-center">
                     <a className="link" href="https://powerbymy.com/">IR PARA O SITE</a>
                 </div>
+            </div>
+
+            {/* Botão com link para Whatsapp da PBM */}
+            <div id="whatsappButton" className={espacoBtnZap} style={{ zIndex: "99", left: "initial"}}>
+                <a href="https://wa.me/5511999504410?text=Olá, como podemos ajudar ?" target="_blank">
+                    <img id="whatsappImg" src={logoWhatsapp} alt="Botão do Whatsapp" />
+                </a>
             </div>
 
         </div>

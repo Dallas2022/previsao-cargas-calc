@@ -7,6 +7,44 @@ Data: 22/03/2024
 
 */
 
+@keyframes float {
+    0% {
+        transform: translate3d(0em, 0em, 0em);
+    }
+
+    12% {
+        transform: translate3d(0.0625em, 0.0625em, 0.0625em);
+    }
+
+    25% {
+        transform: translate3d(0.125em, 0.125em, 0.125em);        
+    }
+
+    37% {
+        transform: translate3d(0.1875em, 0.1875em, 0.1875em);        
+    }
+
+    50% {
+        transform: translate3d(0.25em, 0.25em, 0.25em);
+    }
+
+    62% {
+        transform: translate3d(0.1875em, 0.1875em, 0.1875em);
+    }
+
+    75% {
+        transform: translate3d(0.125em, 0.125em, 0.125em);
+    }
+
+    87% {
+        transform: translate3d(0.0625em, 0.0625em, 0.0625em);
+    }
+
+    100% {
+        transform: translate3d(0em, 0em, 0em);
+    }
+}
+
 #tituloLocal, #descConsumidor {
     width: 100%;
     font-weight: 700;
@@ -54,4 +92,14 @@ p {
     font-weight: 500;
     letter-spacing: 0.125em;
     font-family: Arial, Helvetica, sans-serif
+}
+
+#whatsappButton {
+    transform: translate3d(0, 0, 0);
+    animation: float 3s ease-in-out infinite;
+}
+
+#whatsappImg {
+    width:2.875em;
+    height:2.875em
 }
