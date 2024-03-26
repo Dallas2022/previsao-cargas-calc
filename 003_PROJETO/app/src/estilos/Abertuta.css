@@ -46,8 +46,7 @@ Data: 22/03/2024
 }
 
 body {    
-    background: linear-gradient(317deg, #666666, #262626, #0D0D0D);
-    background-attachment: fixed;
+    background: linear-gradient(317deg, #666666, #262626, #0D0D0D);    
 }
 
 #titulo {
