@@ -3,13 +3,50 @@
 // Cargo: Desenvolvedor Fullstack
 // Data: 22/03/2024
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import Contexto from "../providers/Contexto";
 
 // Este arquivo renderiza a primeira linha dos dados das tomadas de uso geral
 
 function TugLinhaHeader(props) {
+
+    // Verifica se o dispositivo é mobile ou não
+    const [largura, setLargura] = useState(window.innerWidth);
+
+    const [sigla, setSigla] = useState(() => {
+        return "Tomada Uso Geral - TUG"
+    })
+
+    // Define o texto dos placeholders com base na dimensão da tela
+    useEffect(() => {
+
+        const handleResize = () => {
+            setLargura(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
+    }, []);
+
+    useEffect(() => {
+
+        if (largura < 768) {
+
+            setSigla("T.U.G")
+
+        } else {
+
+            setSigla("Tomada Uso Geral - TUG")
+
+        }
+
+    }, [largura])
+
 
     // Valores dinâmicos para interação com a coleção de dados
     const [NumPontos, setNumPontos] = useState(() => {
@@ -25,7 +62,7 @@ function TugLinhaHeader(props) {
     const [PontosPerimetro, setPontosPerimetro] = useState(() => {
         return 0
     })
-    
+
 
     // Coleção de dados para serem enviados para calcular no contexto público
     // Ordem dos dados - Id, Aparelho, Pot. Unit. (W) e Id do Local
@@ -36,8 +73,8 @@ function TugLinhaHeader(props) {
 
     // A coleção é atualizada cada vez que um valor for alterado
     useEffect(() => {
-                
-        publico.setMtzPotTotTUG(publico.mtzPotTotTUG.filter(el => el[0] !== props.idLocal))       
+
+        publico.setMtzPotTotTUG(publico.mtzPotTotTUG.filter(el => el[0] !== props.idLocal))
         publico.setMtzPotTotTUG(mtz => [...mtz, valores])
         publico.setControleRender(!publico.controleRender)
 
@@ -47,11 +84,11 @@ function TugLinhaHeader(props) {
     useEffect(() => {
 
         let perimetro = publico.mtzAreaTotal.filter(el => el[0] === props.idLocal)
-        
-        if(perimetro.length > 0) {
+
+        if (perimetro.length > 0) {
 
             // Cálculo do número de pontos de TUG baseado no perímetro
-            if(perimetro[0][2] <= 6 && perimetro[0][2] > 0) {
+            if (perimetro[0][2] <= 6 && perimetro[0][2] > 0) {
                 setPontosPerimetro(1)
             } else {
                 let valor = perimetro[0][2] / 5
@@ -61,14 +98,14 @@ function TugLinhaHeader(props) {
         }
 
     }, [publico.controleRender])
-    
-    
+
+
     return (
         <>
             {/* Primeira linha das TUG's - Tomadas de uso geral */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-6 col-sm-6">
-                    <label className="lblEntradas">T.U.G :</label>
+                    <label className="lblEntradas">{sigla} :</label>
                     <button type="button" onClick={() => { props.fnc_inserir() }} className="adicionaTug">+</button>
                 </div>
                 <div className="col-lg-6 col-sm-6">

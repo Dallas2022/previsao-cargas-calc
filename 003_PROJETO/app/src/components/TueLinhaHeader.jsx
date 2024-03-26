@@ -11,6 +11,43 @@ import Contexto from "../providers/Contexto";
 
 function TueLinhaHeader(props) {
 
+    // Verifica se o dispositivo é mobile ou não
+    const [largura, setLargura] = useState(window.innerWidth);
+
+    const [sigla, setSigla] = useState(() => {
+        return "Tomada Uso Específico - TUE"
+    })
+
+    // Define o texto dos placeholders com base na dimensão da tela
+    useEffect(() => {
+
+        const handleResize = () => {
+            setLargura(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
+    }, []);
+
+    useEffect(() => {
+
+        if (largura < 768) {
+
+            setSigla("T.U.E")
+
+        } else {
+
+            setSigla("Tomada Uso Específico - TUE")
+
+        }
+
+    }, [largura])
+
+
     // Valores dinâmicos para interação com a coleção de dados
     const [Aparelho, setAparelho] = useState(() => {
         return ""
@@ -29,8 +66,8 @@ function TueLinhaHeader(props) {
 
     // A coleção é atualizada cada vez que um valor for alterado
     useEffect(() => {
-                
-        publico.setMtzPotTotTUE(publico.mtzPotTotTUE.filter(el => el[0] !== props.idLocal))       
+
+        publico.setMtzPotTotTUE(publico.mtzPotTotTUE.filter(el => el[0] !== props.idLocal))
         publico.setMtzPotTotTUE(mtz => [...mtz, valores])
         publico.setControleRender(!publico.controleRender)
 
@@ -42,7 +79,7 @@ function TueLinhaHeader(props) {
             {/* Primeira linha das TUE's - Tomadas de uso específico */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-6 col-sm-6">
-                    <label className="lblEntradas">T.U.E :</label>
+                    <label className="lblEntradas">{sigla} :</label>
                     <button type="button" onClick={() => { props.fnc_inserir() }} className="adicionaIluminacao">+</button>
                 </div>
             </div>
