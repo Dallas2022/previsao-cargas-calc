@@ -13,6 +13,43 @@ import Contexto from "../providers/Contexto";
 
 function Dimensoes(props) {
 
+    // Verifica se o dispositivo é mobile ou não
+    const [largura, setLargura] = useState(window.innerWidth);
+
+    const [campo, setCampo] = useState(() => {
+        return "Informe as Dimensões"
+    })
+
+    // Define o texto dos placeholders com base na dimensão da tela
+    useEffect(() => {
+
+        const handleResize = () => {
+            setLargura(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
+    }, []);
+
+    useEffect(() => {
+
+        if (largura < 768) {
+
+            setCampo("Dimensões")
+
+        } else {
+
+            setCampo("Informe as Dimensões")
+
+        }
+
+    }, [largura])
+
+
     // Valores dinâmicos para interação com a coleção de dados
     const [AreaTotal, setAreaTotal] = useState(() => {
         return 0
@@ -45,7 +82,7 @@ function Dimensoes(props) {
             {/* Linha das dimensões */}
             <div className="row align-items-center divLinhaCima pt-1 pb-2">
                 <div className="col-lg-4 col-sm-12">
-                    <h4 className="lblDadoEntrada">Informe as Dimensões :</h4>
+                    <h4 className="lblDadoEntrada">{campo} :</h4>
                 </div>
                 
                 {/* Entrada do valor da área quadrada */}
