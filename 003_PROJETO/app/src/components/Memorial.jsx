@@ -167,7 +167,7 @@ function Memorial() {
 
             {/* Botão com link para Whatsapp da PBM */}
             <div id="whatsappButton" className={espacoBtnZap} style={{ zIndex: "99", left: "initial"}}>
-                <a href="https://wa.me/5511999504410?text=Olá, como podemos ajudar ?" target="_blank">
+                <a href="https://wa.me/5511999504410?text=Olá Iuri, acessei o site da Power By My e tenho interesse em seus serviços." target="_blank">
                     <img id="whatsappImg" src={logoWhatsapp} alt="Botão do Whatsapp" />
                 </a>
             </div>
